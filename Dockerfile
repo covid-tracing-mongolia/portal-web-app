@@ -46,6 +46,6 @@ RUN chown -R django:django /code
 
 USER django:django
 
-EXPOSE 8000
+EXPOSE 3000
 
 CMD ["./entrypoint.sh"]

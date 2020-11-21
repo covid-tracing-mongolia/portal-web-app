@@ -15,7 +15,7 @@ services:
       - DJANGO_ENV=development
     build: .
     ports:
-      - "8000:8000"
+      - "3000:3000"
     command: ./entrypoint.sh
     depends_on:
       - db

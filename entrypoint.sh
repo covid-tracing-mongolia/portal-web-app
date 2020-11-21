@@ -11,7 +11,7 @@ python manage.py createdefaultsuperuser
 # Start server
 echo "Starting server"
 if [[ ${DJANGO_ENV} == 'development' ]]; then
-	python manage.py runserver 0.0.0.0:8000
+	python manage.py runserver 0.0.0.0:3000
 else
-	uwsgi --http :8000 --master --module portal.wsgi --static-map /static=/code/staticfiles --enable-threads --processes 2
+	uwsgi --http :3000 --master --module portal.wsgi --static-map /static=/code/staticfiles --enable-threads --processes 2
 fi
