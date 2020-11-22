@@ -64,7 +64,7 @@ class RequestBackupCodes(WaffleSwitchMixin, LoginRequiredMixin, FormView):
     waffle_switch = "BACKUP_CODE"
     form_class = RequestBackupCodesForm
     template_name = "backup_codes/backup_codes_help.html"
-    success_url = reverse_lazy("welcome")
+    success_url = reverse_lazy("start")
 
     @cached_property
     def user_admin(self):

@@ -239,7 +239,7 @@ STATIC_URL = "/static/"
 AUTH_USER_MODEL = "profiles.HealthcareUser"
 
 LOGIN_URL = "login"
-OTP_LOGIN_URL = "welcome"
+OTP_LOGIN_URL = "start"
 
 LOGIN_REDIRECT_URL = "start"
 LOGOUT_REDIRECT_URL = "login"
