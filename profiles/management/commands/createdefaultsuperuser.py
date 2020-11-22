@@ -23,7 +23,7 @@ class Command(BaseCommand):
         # https://docs.djangoproject.com/en/3.0/topics/auth/passwords/#django.contrib.auth.password_validation.validate_password
         if validate_password(SU_DEFAULT_PASSWORD) is None:
             HealthcareUser.objects.create_superuser(
-                "uok_admin",
+                "uok_admin@covidmongolia.app",
                 "hcw_portal_admin",
                 SU_DEFAULT_PASSWORD,
                 phone_number="+97699999999",

@@ -2,9 +2,9 @@
 {% load i18n %}
 <div class="canada-flag">
     {% get_current_language as LANGUAGE_CODE %}
-    {% if LANGUAGE_CODE == 'en' %}
-        <img src="{% static 'img/sig-blk-en.svg' %}" alt="{% trans 'Government of Canada' %}" />
+    {% if LANGUAGE_CODE == 'mn' %}
+        <img src="{% static 'img/sig-blk-mn.svg' %}" alt="{% trans 'COVID Tracing - Mongolia' %}" />
     {% else %}
-        <img src="{% static 'img/sig-blk-fr.svg' %}" alt="{% trans 'Government of Canada' %}" />
+        <img src="{% static 'img/sig-blk-mn.svg' %}" alt="{% trans 'COVID Tracing - Mongolia' %}" />
     {% endif %}
 </div>

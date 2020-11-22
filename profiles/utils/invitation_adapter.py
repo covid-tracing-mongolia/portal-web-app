@@ -21,7 +21,7 @@ class HealthcareInvitationAdapter(BaseInvitationsAdapter):
             notifications_client.send_email_notification(
                 email_address=context.get("email"),
                 template_id=settings.INVITATION_EMAIL_TEMPLATE_ID.get(
-                    context.get("language") or "en"
+                    context.get("language") or "mn"
                 ),
                 personalisation={
                     "url": context.get("invite_url"),

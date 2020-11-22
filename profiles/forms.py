@@ -289,7 +289,7 @@ class HealthcarePasswordResetForm(HealthcareBaseForm, PasswordResetForm):
             notifications_client.send_email_notification(
                 email_address=user.email,
                 template_id=settings.PASSWORD_RESET_EMAIL_TEMPLATE_ID.get(
-                    context.get("language") or "en"
+                    context.get("language") or "mn"
                 ),
                 personalisation={
                     "name": user.name,

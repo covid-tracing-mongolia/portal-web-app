@@ -1,0 +1,1604 @@
+# COVID Tracing Mongolia.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under Apache 2.0 License.
+# Amarbayar Amarsanaa <amarbayar.amarsanaa@gmail.com>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-22 06:45+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Amarbayar Amarsanaa <amarbayar.amarsanaa@gmail.com>\n"
+"Language: MN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: backup_codes/templates/backup_codes/backup_codes_contacted.html:5
+#: backup_codes/templates/backup_codes/backup_codes_contacted.html:11
+msgid "We’ve contacted your administrator"
+msgstr "Бид админтай холбогдох хүсэлт илгээлээ"
+
+#: backup_codes/templates/backup_codes/backup_codes_contacted.html:12
+msgid "Тэд танд код өгөх болно."
+msgstr ""
+
+#: backup_codes/templates/backup_codes/backup_codes_contacted.html:13
+#: contact/templates/contact/success.html:16 portal/templates/403.html:16
+#: portal/templates/404.html:17 portal/templates/includes/nav_header.html:13
+#: portal/templates/locked_out.html:9
+#: portal/templates/registration/login.html:7
+#: portal/templates/registration/login.html:18
+#: portal/templates/registration/login.html:20
+msgid "Log in"
+msgstr "Нэвтрэх"
+
+#: backup_codes/templates/backup_codes/backup_codes_help.html:5
+#: contact/templates/contact/form.html:5
+#: portal/templates/registration/login.html:6
+#: portal/templates/registration/password_reset_confirm.html:6
+#: portal/templates/registration/password_reset_form.html:5
+#: profiles/templates/invitations/templates/invitation_confirm_delete.html:5
+#: profiles/templates/invitations/templates/invite.html:5
+#: profiles/templates/invitations/templates/invite_complete.html:5
+#: profiles/templates/invitations/templates/invite_list.html:5
+#: profiles/templates/profiles/2fa-resend.html:6
+#: profiles/templates/profiles/2fa.html:6
+#: profiles/templates/profiles/edit.html:5
+#: profiles/templates/profiles/healthcareuser_confirm_delete.html:5
+#: profiles/templates/profiles/signup.html:5
+#: profiles/templates/profiles/signup_2fa.html:5
+#: profiles/templates/profiles/welcome.html:5
+#: profiles/templates/profiles/yubikey_create.html:5
+#: profiles/templates/profiles/yubikey_delete.html:5
+#: profiles/templates/profiles/yubikey_verify.html:5
+msgid "Error: "
+msgstr "Алдаа:"
+
+#: backup_codes/templates/backup_codes/backup_codes_help.html:6
+#: backup_codes/templates/backup_codes/backup_codes_help.html:13
+#: profiles/templates/profiles/2fa.html:43
+msgid "No security code?"
+msgstr "Аюулгүй байдлыг хангах код байхгүй юу?"
+
+#: backup_codes/templates/backup_codes/backup_codes_help.html:14
+#, python-format
+msgid "Ask your administrator (%(admin_email)s) for a code."
+msgstr "(%(admin_email)s) Админаасаа код асууж авна уу."
+
+#: backup_codes/templates/backup_codes/backup_codes_help.html:15
+msgid "Get codes from admin"
+msgstr "Админаас код авах"
+
+#: backup_codes/templates/backup_codes/backup_codes_list.html:4
+#: backup_codes/templates/backup_codes/backup_codes_list.html:8
+msgid "Security codes"
+msgstr "Аюулгүй байдлыг хангах код"
+
+#: backup_codes/templates/backup_codes/backup_codes_list.html:9
+msgid ""
+"Use these security codes to login to the portal. The code proves it’s you."
+msgstr "Энэ кодыг хэрэглэг ваб апп руу нэвтэрнэ үү. Код нь таныг мөн гэдгийг батлана."
+
+#: backup_codes/templates/backup_codes/backup_codes_list.html:10
+msgid "You can use each code only once."
+msgstr "Кодыг нэг л удаа ашиглах боломжтой."
+
+#: backup_codes/templates/backup_codes/backup_codes_list.html:11
+msgid ""
+"Keep the codes on paper in a safe place. Do not save or store this screen, "
+"copy the codes to an electronic device, or share the codes with anyone else."
+msgstr "Кодыг цаасан дээр тэмдэглэж аваад, хүн харахгүй газар байлгаарай. "
+"Дэлгэцэн дээр гаргах, хүнд хэлэх эсвэл ямар нэг цахилгаан төхөөрөмжинд хадгалахгүй байх шаардлагатай."
+
+#: backup_codes/templates/backup_codes/backup_codes_list.html:15
+msgid ""
+"When you get new codes, the last codes will no longer work, even if you have "
+"not used them yet."
+msgstr "Та шинэ код авсан тохиолдолд өмнө нь авсан код тань ашиглаагүй байсан "
+"ч ажиллагаагүй болно гэдгийг анхаарна уу."
+
+#: backup_codes/templates/backup_codes/backup_codes_list.html:19
+msgid "Get new security codes"
+msgstr "Шинээр код авах"
+
+#: backup_codes/templates/backup_codes/backup_codes_list.html:21
+msgid "Back to your account"
+msgstr "Өөрийн аккаунт руу буцах"
+
+#: backup_codes/templates/backup_codes/signup_backup_codes_list.html:4
+#: backup_codes/templates/backup_codes/signup_backup_codes_list.html:8
+#: profiles/templates/profiles/signup_2fa.html:14
+msgid "No mobile phone?"
+msgstr "Гар утас байхгүй юу?"
+
+#: backup_codes/templates/backup_codes/signup_backup_codes_list.html:9
+msgid ""
+"Log into the portal using one of the security codes below. You can use each "
+"code only once.  When you have 1 code left, we’ll tell you how to get more."
+msgstr "Портал вэб апп руу орохдоо доорх кодуудын нэгийг хэрэглэнэ. Нэг кодыг "
+"нэг л удаа ашиглах боломжтой. Танд 1 код үлдсэн тохиолдолд дахин код нэмж авах "
+"зааварчилгааг бид өгөх болно."
+
+#: backup_codes/templates/backup_codes/signup_backup_codes_list.html:10
+msgid ""
+"Write the codes on paper. Do not save or store this screen, copy the codes "
+"to an electronic device, or share the codes with anyone else."
+msgstr "Кодыг цаасан дээр тэмдэглэж аваад, хүн харахгүй газар байлгаарай. "
+"Дэлгэцэн дээр гаргах, хүнд хэлэх эсвэл ямар нэг цахилгаан төхөөрөмжинд хадгалахгүй байх шаардлагатай."
+
+#: backup_codes/templates/backup_codes/signup_backup_codes_list.html:15
+#: profiles/templates/profiles/2fa.html:36
+#: profiles/templates/profiles/signup_2fa.html:14
+msgid "Next"
+msgstr "Цааш нь"
+
+#: contact/forms.py:14
+msgid "Your name (optional)"
+msgstr "Таны нэр (заавал биш)"
+
+#: contact/forms.py:16
+msgid "Your email address"
+msgstr "Таны имэйл"
+
+#: contact/forms.py:18
+msgid "Enter your email address if you want to contact us"
+msgstr "Та бидэнд хандахыг хүсвэл имэйл хаягаа оруулна уу"
+
+#: contact/forms.py:21
+msgid "You need to enter something if you want to contact us"
+msgstr "Та бидэнд хандахыг хүсвэл мэдээллээ оруулах шаардлагатай шүү"
+
+#: contact/forms.py:23
+msgid "Ask questions or give feedback"
+msgstr "Асуулт асуух эсвэл санал сэтгэгдэл хуваалцах"
+
+#: contact/forms.py:48
+msgid ""
+"There was a problem and your feedback wasn’t submitted. Please email your "
+"feedback to assistance+healthcare@cds-snc.ca."
+msgstr "Таны мэссэжийг хүлээн авахад алдаа гарлаа. Та шууд имэйл бичээрэй: "
+"info@covidmongolia.app"
+
+#: contact/templates/contact/form.html:6 contact/templates/contact/form.html:13
+#: portal/templates/500.html:17 portal/templates/includes/footer.html:8
+#: portal/templates/includes/nav_main.html:11
+msgid "Contact us"
+msgstr "Холбоо барих"
+
+#: contact/templates/contact/form.html:14
+msgid "Send"
+msgstr "Илгээх"
+
+#: contact/templates/contact/success.html:5
+#: contact/templates/contact/success.html:10
+msgid "Thank you for contacting us"
+msgstr "Холбогдсонд баярлалаа"
+
+#: contact/templates/contact/success.html:11
+msgid "We’ll reply as soon as possible."
+msgstr "Бид танруу удахгүй хариу илгээх болно."
+
+#: contact/templates/contact/success.html:14
+#: covid_key/templates/covid_key/key.html:72 portal/templates/403.html:14
+#: portal/templates/404.html:15
+msgid "New patient"
+msgstr "Шинэ өвчтөн"
+
+#: covid_key/templates/covid_key/key.html:5
+#: covid_key/templates/covid_key/key.html:10
+msgid "Give patient this key"
+msgstr "Өвчтөнд энэ кодыг өгнө үү"
+
+#: covid_key/templates/covid_key/key.html:16
+msgid "Instructions for entering key"
+msgstr "Код оруулах зааварчилгаа"
+
+#: covid_key/templates/covid_key/key.html:22
+msgid ""
+"Open the app. At the bottom of the screen, swipe “Tap for menu” for the "
+"screen to enter the one time key."
+msgstr "Утсан дээрээ апп-аа нээнэ. Дэлгэцийн доод талын хэсэгт байгаа " 
+"Меню Харах гэсэн текст байгаа хэсгийг дээш нь чирэх байдлаар гаргана."
+
+#: covid_key/templates/covid_key/key.html:28
+msgid "Tap “Enter your one-time key”."
+msgstr "Нэг Удаагийн Код Оруулах гэсэн дээр дарна."
+
+#: covid_key/templates/covid_key/key.html:34
+msgid ""
+"On “Notify people they’ve been exposed”, read the instructions. Then tap "
+"“Next”."
+msgstr "Цааш нь"
+
+#: covid_key/templates/covid_key/key.html:40
+msgid ""
+"Patients can use capital or small letters to enter the one-time key. Tap "
+"“Submit key”."
+msgstr "Кодыг оруулах"
+
+#: covid_key/templates/covid_key/key.html:46
+msgid ""
+"Then several screens ask questions. The app uses the answers to calculate "
+"when patients were most likely contagious, so it only notifies people they "
+"were near at that time."
+msgstr "Дараа нь өчтөнөөс хэд, хэдэн асуулт асуух болно. Апп нь энэ мэдээллийг "
+"ашиглан аль болох өвчтөнд шинж тэмдэг илэрч эхэлсэн өдрүүдэд өвчтөнтэй хавьтсан "
+"хүмүүст мэдэгдэл явуулахыг зорих болно."
+
+#: covid_key/templates/covid_key/key.html:48
+msgid ""
+"If a patient decides not to answer, then the app notifies everyone they were "
+"near over the past 14 days."
+msgstr "Хэрвээ өвчтөн хэзээ шинж тэмдэг илэрсэнийг сайн мэдэхгүй эсвэл оруулахыг "
+"хүсэхгүй бол өмнөх 14 өдөрт хавьтсан бүх хүмүүст мэдэгдэл очно."
+
+#: covid_key/templates/covid_key/key.html:51
+msgid ""
+"After patients have either answered questions or decided not to answer,  "
+"they need to give COVID Alert permission to upload random codes. Tap “Share "
+"exposures” to give permission."
+msgstr "Өвчтөн нь асуултанд хариулсаны дараа (эсвэл хариулахгүй гэж сонгосоны дараа)"
+" тухайн өвчтөн гар утасны апп-даа зөвшөөрөл өгөх хэрэгтэй. Энэ зөвшөөрлийг өгсөнөөр "
+" тухайн өвчтөний хавьталын талаарх мэдээлэл сервэрлүү дамжуулагдах юм. -Хавьталын "
+"мэдээллийг илгээх- гэсэн дээр дарж мэдээллийг илгээнэ."
+
+#: covid_key/templates/covid_key/key.html:57
+msgid ""
+"The next screen asks permission to share information to notify others. "
+"Depending on the phone’s operating system, the screen may describe this in "
+"different ways, such as sharing random IDs with COVID Alert. Tap “Share”."
+msgstr "Дараагийн дэлгэц дээр ойрын хавьталын хүмүүст мэдэгдэл илгээх "
+"зөвшөөрлийг асууна. Ямар утас гэдгээс хамаараад энэ зөвшөөрөл нь өөр, "
+"өөр тексттэй гарч ирж магагдүй. Share гэсэн дээр дарна."
+
+#: covid_key/templates/covid_key/key.html:63
+msgid ""
+"COVID Alert will ask permission to upload random codes daily for the next 13 "
+"days."
+msgstr "Апп нь дараагийн 13 хоногийн турш хавьталтын мэдээллийг өдөр болгон "
+"сервэрлүү илгээх зөвшөөрлийг өвчтөнөөс асууна."
+
+#: covid_key/templates/covid_key/locked.html:4
+#: covid_key/templates/covid_key/locked.html:7
+msgid "Key generation limit reached"
+msgstr "Нэмж код гаргах боломжгүй боллоо"
+
+#: covid_key/templates/covid_key/locked.html:8
+msgid "You are generating too many keys. Try again later."
+msgstr "Та нэг дор хэтэрхий их код гаргаж авах гээд байна. "
+"Түр хүлээж байгаад дахин оролдоно уу."
+
+#: covid_key/templates/covid_key/start.html:4
+#: covid_key/templates/covid_key/start.html:7
+msgid "Generate a one-time key"
+msgstr "Нэг Удаагийн Код гаргаж авах"
+
+#: covid_key/templates/covid_key/start.html:9
+msgid "Check that the patient:"
+msgstr "Доорх зүйлсийг шалгана уу. Өвчтөн: "
+
+#: covid_key/templates/covid_key/start.html:12
+msgid "Has tested positive for COVID-19."
+msgstr "COVID-19 шинжилгээний хариу эерэг гарсан."
+
+#: covid_key/templates/covid_key/start.html:13
+msgid "Has installed the <strong>COVID Alert app</strong> on their phone."
+msgstr "<strong>Covid Tracing Mongolia</strong> апп-г утсан дээрээ суулгасан."
+
+#: covid_key/templates/covid_key/start.html:14
+msgid ""
+"Is ready to <strong>enter the key in the app</strong> or <strong>record it "
+"somewhere safe</strong>."
+msgstr "Нэг Удаагийн Код-г апп дотроо оруулахад бэлэн."
+
+#: covid_key/templates/covid_key/start.html:15
+msgid ""
+"Understands <strong>the key expires in 24 hours</strong>. If the key expires "
+"before the patient enters it, they will not be able to get a new key.</"
+"strong>"
+msgstr "Нэг Удаагийн Код нь 24 цаг болоод хүчингүй болно. Энэ код нь хүчингүй "
+"болчихвол дахин код авах боломжгүй болно гэдгийг ойлгож байгаа."
+
+#: covid_key/templates/covid_key/start.html:18
+msgid ""
+"Help us keep accurate stats. Only generate keys for real patients and only "
+"one key per patient."
+msgstr "Тоо, баримт статистикийг үнэн зөв байлгах үүднээс 1 өвчтөнд 1 код гаргаж өгнө үү."
+
+#: covid_key/templates/covid_key/start.html:23
+msgid "Generate key"
+msgstr "Код үүсгэх"
+
+#: covid_key/templatetags/alphabet.py:10
+msgid "Zero."
+msgstr "Нойл"
+
+#: covid_key/templatetags/alphabet.py:11
+msgid "One."
+msgstr "Нэг"
+
+#: covid_key/templatetags/alphabet.py:12
+msgid "Two."
+msgstr "Хоёр"
+
+#: covid_key/templatetags/alphabet.py:13
+msgid "Three."
+msgstr "Гурав"
+
+#: covid_key/templatetags/alphabet.py:14
+msgid "Four."
+msgstr "Дөрөв"
+
+#: covid_key/templatetags/alphabet.py:15
+msgid "Five."
+msgstr "Тав"
+
+#: covid_key/templatetags/alphabet.py:16
+msgid "Six."
+msgstr "Зургаа"
+
+#: covid_key/templatetags/alphabet.py:17
+msgid "Seven."
+msgstr "Долоо"
+
+#: covid_key/templatetags/alphabet.py:18
+msgid "Eight."
+msgstr "Найм"
+
+#: covid_key/templatetags/alphabet.py:19
+msgid "Nine."
+msgstr "Ес"
+
+#: covid_key/templatetags/alphabet.py:20
+msgid "A as in Animal."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:21
+msgid "E as in Espresso."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:22
+msgid "F as in Family."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:23
+msgid "H as in Hospital."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:24
+msgid "J as in January."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:25
+msgid "K as in Kilo."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:26
+msgid "L as in Lion."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:27
+msgid "Q as in Question."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:28
+msgid "R as in Radio."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:29
+msgid "S as in September."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:30
+msgid "U as in Uniform."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:31
+msgid "W as in Wi-Fi."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:32
+msgid "X as in X-ray."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:33
+msgid "Y as in Yoga."
+msgstr ""
+
+#: covid_key/templatetags/alphabet.py:34
+msgid "Z as in Zebra."
+msgstr ""
+
+#: covid_key/views.py:77
+msgid "Something went wrong. Contact your administrator."
+msgstr "Алдаа гарлаа. Админтай холбогдоно уу."
+
+#: portal/settings.py:342
+msgid "This account has been locked due to too many failed log in attempts."
+msgstr "Нэвтрэх оролдогыг нэг дор хэтэрхий их амжилтгүй хийсэн тул таны аккаунт түгжигдлээ."
+
+#: portal/templates/403.html:5 portal/templates/403.html:10
+msgid "No entry"
+msgstr "Мэдээлэл байхгүй байна"
+
+#: portal/templates/403.html:11
+msgid "You do not have permission to visit this page."
+msgstr "Энэ хуудсанд хандах эрх танд байхгүй байна."
+
+#: portal/templates/403_csrf.html:4 portal/templates/403_csrf.html:7
+msgid "Forbidden"
+msgstr "Нэвтрэх эрх байхгүй байна"
+
+#: portal/templates/403_csrf.html:9
+msgid "Something went wrong when visiting this page."
+msgstr "Энэ хуудсыг ачааллаж байхад алдаа гарлаа."
+
+#: portal/templates/403_csrf.html:10
+msgid "Start over"
+msgstr "Дахин эхлэх"
+
+#: portal/templates/404.html:5 portal/templates/404.html:10
+msgid "Page not found"
+msgstr "Хуудас олдсонгүй"
+
+#: portal/templates/404.html:11
+msgid "If you typed the web address, make sure it’s correct."
+msgstr "Вэб хаягаа зөв бичсэн эсэхээ шалгана уу."
+
+#: portal/templates/404.html:12
+msgid "If you pasted the web address, make sure you copied the entire address."
+msgstr "Вэб хаяг хуулж оруулж ирсэн бол, бүтэн хаягийг нь хуулсан эсэхийг шалгана уу"
+
+#: portal/templates/500.html:5 portal/templates/500.html:10
+msgid "Try again later"
+msgstr "Түр хүлээгээд, дахин оролдоно уу"
+
+#: portal/templates/500.html:11
+msgid ""
+"Something went wrong with the system. Tell your portal adminstrator as soon "
+"as possible."
+msgstr "Системд асуудал гарлаа. Админд яаралтай хандана уу."
+
+#: portal/templates/500.html:13
+msgid "We need to fix the problem so you can generate keys."
+msgstr "Админ энэ асуудлыг шуурхай шийэж байж та код гаргаж авах боломжтой болно."
+
+#: portal/templates/500.html:14
+msgid "Please contact us with the details of what you were trying to do."
+msgstr "Та яг юу хийх гэж байхад алдаа гарсан талаар мэдээллээ хуваалцаарай"
+
+#: portal/templates/admin/login-disabled.html:23
+#, python-format
+msgid "Please use the <a href=\"%(login_url)s\">main website to log in</a>."
+msgstr "<a href=\"%(login_url)s\"> руу хандаж нэвтэрнэ үү."
+
+#: portal/templates/base.html:31 portal/templates/base.html:49
+msgid "COVID Alert Portal"
+msgstr "COVID Tracing Mongolia - Портал Вэб Апп"
+
+#: portal/templates/base.html:31
+msgid "— COVID Alert Portal"
+msgstr "- COVID Tracing Mongolia - Портал Вэб Апп"
+
+#: portal/templates/base.html:35
+msgid "Skip to main content"
+msgstr "Үндсэн хэсэг рүү очих"
+
+#: portal/templates/includes/FIP_header.html:6
+#: portal/templates/includes/FIP_header.html:8
+msgid "Government of Canada"
+msgstr "Монголын Улсын Засгийн Газар"
+
+#: portal/templates/includes/big-code.html:6
+msgid "EXAMPLE ONLY. <br/>NOT A VALID ONE-TIME KEY."
+msgstr "ЭНЭ БОЛ ЖИШЭЭ."
+
+#: portal/templates/includes/big-code.html:13
+msgid ""
+"\n"
+"        <p>The <strong>key expires in 24 hours</strong>.</p>\n"
+"    "
+msgstr ""
+"\n"
+"        <p>Код нь <strong>24 цагийн дараа</strong> хүчингүй болно.</p>\n"
+"    "
+
+#: portal/templates/includes/big-code.html:19
+msgid "No new keys after expiry."
+msgstr "Хугацаа дууссаны дараа шинэ код байхгүй."
+
+#: portal/templates/includes/cds_form.html:44
+msgid "Submit"
+msgstr "Илгээх"
+
+#: portal/templates/includes/error_list.html:6
+msgid "Please correct the errors on the page"
+msgstr "Хуудсанд заасан алдаануудыг засна уу."
+
+#: portal/templates/includes/expires_string.html:7
+msgid "Key <strong>expires on</strong>"
+msgstr "Код <strong>хугацаа дуусах: </strong>"
+
+#: portal/templates/includes/expires_string.html:15
+msgid "at"
+msgstr " - "
+
+#: portal/templates/includes/footer.html:9
+msgid "Quick guide"
+msgstr "Тайлбар"
+
+#: portal/templates/includes/footer.html:10
+#: profiles/templates/profiles/privacy.html:5
+msgid "Privacy"
+msgstr "Нууцлал"
+
+#: portal/templates/includes/footer.html:11
+#: profiles/templates/profiles/terms.html:5
+#: profiles/templates/profiles/terms.html:9
+msgid "Terms of use"
+msgstr "Үйлчилгээний Журам"
+
+#: portal/templates/includes/footer.html:14
+msgid "Symbol of the Government of Canada"
+msgstr "Монгол Улсын Засгийн Газрын тэмдэг"
+
+#: portal/templates/includes/nav_header.html:3
+msgid "Language and account navigation"
+msgstr "Хэл солих болон хэрэглэгчийн мэдээлэл удирдах"
+
+#: portal/templates/includes/nav_header.html:9
+#: profiles/templates/profiles/healthcareuser_detail.html:7
+#: profiles/templates/profiles/healthcareuser_detail.html:16
+msgid "Your account"
+msgstr "Таны аккаунт"
+
+#: portal/templates/includes/nav_header.html:11
+msgid "Log out"
+msgstr "Гарах"
+
+#: portal/templates/includes/nav_header.html:20
+msgid "Language selection"
+msgstr "Хэл сонгох"
+
+#: portal/templates/includes/nav_main.html:3
+msgid "Product navigation"
+msgstr "Вэб апп чиглүүлэх"
+
+#: portal/templates/includes/nav_main.html:7
+msgid "Start"
+msgstr "Эхлэх"
+
+#: portal/templates/includes/nav_main.html:9
+#: profiles/templates/profiles/healthcareuser_list.html:4
+#: profiles/templates/profiles/healthcareuser_list.html:8
+msgid "Manage team"
+msgstr "Баг удирдах хэсэг"
+
+#: portal/templates/includes/phonetic.html:3
+msgid "Read key phonetically and ask patient to read it back to you:"
+msgstr "Кодыг нэг нэгээр нь уншиж, өвчтөн зөв сонссоныг баталгаажуулна уу:"
+
+#: portal/templates/locked_out.html:5
+msgid "Account locked"
+msgstr "Аккаунт түгжээтэй байна"
+
+#: portal/templates/locked_out.html:10
+msgid "Oops! Your account is temporarily locked."
+msgstr "Таны аккаунт түр хугацаанд түгжигдлээ."
+
+#: portal/templates/locked_out.html:11
+msgid ""
+"Contact <a href=\"mailto:assistance+healthcare@cds-snc.ca\">assistance"
+"+healthcare@cds-snc.ca</a> for help."
+msgstr ""
+"Холбоо барих: <a href=\"mailto:info@covidmongolia.app\">"
+"+info@covidmongolia.app</a> for help."
+
+#: portal/templates/registration/login.html:22
+#: portal/templates/registration/password_reset_form.html:6
+#: portal/templates/registration/password_reset_form.html:12
+msgid "Forgot your password?"
+msgstr "Нууц үгээ мартсан уу?"
+
+#: portal/templates/registration/login.html:24
+msgid ""
+"Only an authorized healthcare worker can use a portal account and give a "
+"COVID Alert key."
+msgstr "Зөвхөн албан ёсны, эрх бүхий байгууллагын зөвшөөрөлтэй ажилчид "
+"портал вэб аппыг хэрэглэх боломжтой."
+
+#: portal/templates/registration/login.html:30
+msgid "Thanks for your essential work"
+msgstr "Галын шугаман дээр ажиллаж байгаа танд баярлалаа."
+
+#: portal/templates/registration/password_reset_confirm.html:7
+#: portal/templates/registration/password_reset_confirm.html:17
+#: profiles/forms.py:194
+#: profiles/templates/profiles/healthcareuser_detail.html:92
+msgid "Change your password"
+msgstr "Нууц үгээ солих"
+
+#: portal/templates/registration/password_reset_confirm.html:9
+#: portal/templates/registration/password_reset_confirm.html:21
+msgid "This link has expired"
+msgstr "Энэ линк хүчингүй болсон байна"
+
+#: portal/templates/registration/password_reset_confirm.html:19
+msgid "Change password"
+msgstr "Нууц үг солих"
+
+#: portal/templates/registration/password_reset_confirm.html:23
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used."
+msgstr "Нууц үг солих линк хүчингүй болсон байна. Магадгүй аль хэдийний "
+"хэрэглэгдчихсэн байж болох юм."
+
+#: portal/templates/registration/password_reset_confirm.html:26
+#, python-format
+msgid ""
+"If you still need a new password, <a href=\"%(url)s\">send a new password "
+"reset email</a>."
+msgstr ""
+"Шинэ нууц үг хэрэгтэй бол: <a href=\"%(url)s\">шинэ нууц үг илгээх "
+
+#: portal/templates/registration/password_reset_done.html:4
+#: portal/templates/registration/password_reset_done.html:7
+msgid "Check your email"
+msgstr "Имэйл ээ шалгана уу"
+
+#: portal/templates/registration/password_reset_done.html:9
+msgid "Use the link in the email to change your password."
+msgstr "Имэйл доторх линкээр дамжин нууц үгээ солино уу."
+
+#: portal/templates/registration/password_reset_form.html:13
+msgid "We’ll email you a link to create a new password."
+msgstr "Нууц үг үүсгэх линк таны имэйл рүү илгээх болно."
+
+#: portal/templates/registration/password_reset_form.html:15
+msgid "Get email"
+msgstr "Имэйл авах"
+
+#: portal/templates/throttled/locked.html:4
+msgid "Daily limit reached"
+msgstr "Өдрийн хязгаарт тулсан байна"
+
+#: portal/templates/throttled/locked.html:7
+msgid "Limit reached"
+msgstr "Хязгаарт тулсан байна"
+
+#: portal/templates/throttled/locked.html:8
+msgid "You have hit your limit."
+msgstr "Танд оноогдсон хязгаарлалтад тулсан байна."
+
+#: profiles/admin.py:25
+msgid "Has a bearer token"
+msgstr "Bearer token байх ёстой"
+
+#: profiles/admin.py:112
+msgid "Number of keys generated in the last 24 hours"
+msgstr "Өнгөрсөн 24 цагт үүсгэсэн кодны тоо"
+
+#: profiles/forms.py:39
+msgid "Enter information to continue"
+msgstr "Мэдээллээ оруулаад үргэлжлүүлнэ үү"
+
+#: profiles/forms.py:42
+msgid "Enter your email address"
+msgstr "Имэйл хаягаа оруулна уу"
+
+#: profiles/forms.py:45
+msgid "Enter your name"
+msgstr "Нэрээ оруулна уу"
+
+#: profiles/forms.py:47
+msgid "Enter your password"
+msgstr "Нууц үгээ оруулна уу"
+
+#: profiles/forms.py:48
+msgid "Enter the same password again"
+msgstr "Нууц үгээ дахин оруулна уу"
+
+#: profiles/forms.py:49
+msgid "Enter your phone number"
+msgstr "Утасны дугаараа оруулна уу"
+
+#: profiles/forms.py:50
+msgid "Enter the same phone number again"
+msgstr "Утасны дугаараа дахин оруулна уу"
+
+#: profiles/forms.py:52
+msgid "Enter your email address for the COVID Alert Portal"
+msgstr "Имэйл хаягаа оруулна уу"
+
+#: profiles/forms.py:65
+msgid ""
+"Your username or password do not match our records.  Check if “caps lock” is "
+"on or off."
+msgstr "Таны нэвтрэх нэр эсвэл нууц үг буруу байна."
+
+#: profiles/forms.py:67
+msgid "This account is inactive."
+msgstr "Энэ аккаунт идэвхгүй байна."
+
+#: profiles/forms.py:78
+msgid "Enter a valid email address"
+msgstr "Зөв имэйл хаяг оруулна уу"
+
+#: profiles/forms.py:80 profiles/forms.py:262 profiles/forms.py:344
+#: profiles/forms.py:475
+#: profiles/templates/invitations/templates/invite_list.html:18
+#: profiles/templates/profiles/healthcareuser_detail.html:45
+#: profiles/templates/profiles/healthcareuser_list.html:18
+msgid "Email address"
+msgstr "Имэйл хаяг"
+
+#: profiles/forms.py:122
+msgid "Security code"
+msgstr "Нууц код"
+
+#: profiles/forms.py:143
+#: profiles/templates/profiles/healthcareuser_detail.html:34
+msgid "Change your name"
+msgstr "Нэрээ солих"
+
+#: profiles/forms.py:145 profiles/forms.py:348 profiles/models.py:73
+msgid "Full name"
+msgstr "Бүтэн нэр"
+
+#: profiles/forms.py:155
+#: profiles/templates/profiles/healthcareuser_detail.html:56
+msgid "Change your mobile phone number"
+msgstr "Гар утасны дугаараа солих"
+
+#: profiles/forms.py:157 profiles/forms.py:431
+#: profiles/templates/profiles/healthcareuser_detail.html:49
+msgid "Mobile phone number"
+msgstr "Гар утасны дугаар"
+
+#: profiles/forms.py:159 profiles/forms.py:433 profiles/models.py:77
+msgid ""
+"You must enter a new security code each time you log in. We’ll text the code "
+"to your mobile phone number."
+msgstr "Нэвтрэх болгондоо та шинэ нууц код авч оруулах ёстой. Нууц кодыг таны гар утасруу явуулах болно."
+
+#: profiles/forms.py:167
+msgid "Confirm your mobile phone number"
+msgstr "Утасны дугаараа баталгаажуулах"
+
+#: profiles/forms.py:168 profiles/forms.py:442
+msgid "Enter the same mobile number as above."
+msgstr "Дээр оруулсан утасны дугаараа дахин оруулна уу."
+
+#: profiles/forms.py:175
+msgid "You entered 2 different phone numbers."
+msgstr "Оруулсан утасны дугаарууд адилхан биш байна."
+
+#: profiles/forms.py:196
+msgid "You entered 2 different passwords."
+msgstr "Оруулсан нууц үгүүд адилхан биш байна."
+
+#: profiles/forms.py:199
+#: profiles/templates/profiles/healthcareuser_detail.html:89
+msgid "Password"
+msgstr "Нууц үг"
+
+#: profiles/forms.py:207 profiles/forms.py:355
+msgid "Confirm your password"
+msgstr "Нууц үгээ бататгана уу"
+
+#: profiles/forms.py:210 profiles/forms.py:318 profiles/forms.py:356
+msgid "Enter the same password as above."
+msgstr "Нууц үгээ дахин оруулна уу"
+
+#: profiles/forms.py:305
+msgid "New password"
+msgstr "Шинэ нууц үг"
+
+#: profiles/forms.py:315
+msgid "Confirm your new password"
+msgstr "Шинэ нууц үгээ бататгана уу"
+
+#: profiles/forms.py:406
+msgid "Email already exists"
+msgstr "Имэйл аль хэдийний системд бүртгэлтэй байна"
+
+#: profiles/forms.py:408
+msgid "An invitation hasn’t been sent to this address"
+msgstr "Энэ хаягруу урилга хараахан явуулаагүй байна."
+
+#: profiles/forms.py:441
+msgid "Confirm your phone number"
+msgstr "Утасны дугаараа баталгаажуулна уу"
+
+#: profiles/forms.py:464
+msgid "The phone numbers didn’t match."
+msgstr "Утасны дугаар зөрсөн байна."
+
+#: profiles/forms.py:492
+msgid "This email address already has a portal account."
+msgstr "Энэ имэйлээр аль хэдийний аккаунт бүртгүүлсэн байна."
+
+#: profiles/forms.py:505
+#, python-format
+msgid ""
+"You cannot invite ‘%(email)s’ to create an account because ‘@%(domain)s’ is "
+"not on the portal’s safelist."
+msgstr "Та ‘%(email)s’ имэйлийг урих боломжгүй. Учир нь нь ‘@%(domain)s’ манай аюулгүй домэйний жагсаалтад ороогүй байна."
+
+#: profiles/forms.py:546 profiles/forms.py:579
+msgid "Token"
+msgstr "Token"
+
+#: profiles/forms.py:568
+msgid "Unable to validate the token with the device."
+msgstr "Төхөөрөмж, token 2-н хоорондын хамаарлыг гаргаж чадсангүй."
+
+#: profiles/forms.py:599
+msgid "The token is not valid for this device."
+msgstr "Token нь энэ төхөөрөмжөнд таарахгүй байна."
+
+#: profiles/models.py:13
+msgid "Bearer token"
+msgstr "Bearer token"
+
+#: profiles/models.py:86
+msgid "If set, the user will be blocked until that time."
+msgstr "Хэрвээ тохируулсан бол, хэрэглэгч энэ цаг хүртэл блок хийгдэнэ."
+
+#: profiles/models.py:128
+msgid "Attempt Time"
+msgstr "Оролдсон цаг"
+
+#: profiles/templates/invitations/messages/invite_already_accepted.txt:3
+#, python-format
+msgid "Account already exists for ‘%(email)s’"
+msgstr "‘%(email)s’-д харгалзах аккаунт аль хэдийний бүртгэгдсэн байна"
+
+#: profiles/templates/invitations/messages/invite_expired.txt:3
+msgid "Your invitation has expired."
+msgstr "Таны урилгын хүчинтэй хугацаа дууссан байна."
+
+#: profiles/templates/invitations/messages/invite_invalid.txt:3
+msgid ""
+"Your invitation has expired. Contact your administrator for a new invitation "
+"link."
+msgstr "Таны урилгын хүчинтэй хугацаа дууссан байна. Админтай холбогдон шинэ линк авна уу."
+
+#: profiles/templates/invitations/templates/invitation_confirm_delete.html:6
+#: profiles/templates/invitations/templates/invitation_confirm_delete.html:12
+#, python-format
+msgid "Are you sure you want to delete the invitation sent to %(email)s?"
+msgstr "%(email)s-д харгалзах урилгыг устгахдаа итгэлтэй байна уу?"
+
+#: profiles/templates/invitations/templates/invitation_confirm_delete.html:13
+msgid ""
+"If you delete their invitation, they will not be able to join the COVID "
+"Alert Portal until they are invited back."
+msgstr "Хүлээгдэж буй урилгыг устгавал тэд дахин урилгын имэйл автал "
+"Портал-руу нэвтэрч чадахгүй болно."
+
+#: profiles/templates/invitations/templates/invitation_confirm_delete.html:14
+#: profiles/templates/profiles/yubikey_delete.html:14
+msgid "Yes, I am sure"
+msgstr "Тиймээ, итгэлтэй байна"
+
+#: profiles/templates/invitations/templates/invitation_confirm_delete.html:14
+#: profiles/templates/profiles/yubikey_delete.html:15
+msgid "No, take me back"
+msgstr "Үгүй ээ, буцая"
+
+#: profiles/templates/invitations/templates/invite.html:6
+#: profiles/templates/invitations/templates/invite.html:11
+#: profiles/templates/invitations/templates/invite_list.html:12
+#: profiles/templates/profiles/healthcareuser_list.html:10
+msgid "Add new account"
+msgstr "Шинэ хэрэглэгч үүсгэх"
+
+#: profiles/templates/invitations/templates/invite.html:13
+msgid "Send invitation email"
+msgstr "Урилгын имэйл илгээх"
+
+#: profiles/templates/invitations/templates/invite_complete.html:6
+msgid "Invitation sent"
+msgstr "Урилга илгээгдлээ."
+
+#: profiles/templates/invitations/templates/invite_complete.html:10
+#, python-format
+msgid "Invitation sent to %(email)s"
+msgstr "%(email)s-д урилгын имэйл илгээлээ"
+
+#: profiles/templates/invitations/templates/invite_complete.html:11
+msgid ""
+"They’ll get an email with a link to create their account. The link expires "
+"in 1 day."
+msgstr "Тэд аккаунт аа нээх боломжтой линкийг имэйлээрээ хүлээн авна. Линк нь "
+"24 цагийн дараа хүчингүй болно."
+
+#: profiles/templates/invitations/templates/invite_complete.html:13
+msgid "Add another account"
+msgstr "Дахин хэрэглэгч нэмэх"
+
+#: profiles/templates/invitations/templates/invite_complete.html:14
+#: profiles/templates/profiles/healthcareuser_list.html:11
+msgid "Check invitations"
+msgstr "Урилга шалгах"
+
+#: profiles/templates/invitations/templates/invite_expired.html:4
+#: profiles/templates/invitations/templates/invite_expired.html:8
+msgid "You need a new link to create an account"
+msgstr "Аккаунт үүсгэхийн тулд шинэ линк хэрэгтэй"
+
+#: profiles/templates/invitations/templates/invite_expired.html:9
+msgid "Contact your administrator."
+msgstr "Админтайгаа холбогдоорой."
+
+#: profiles/templates/invitations/templates/invite_list.html:6
+#: profiles/templates/invitations/templates/invite_list.html:11
+#: profiles/templates/invitations/templates/invite_list.html:15
+msgid "Invitations"
+msgstr "Урилгууд"
+
+#: profiles/templates/invitations/templates/invite_list.html:19
+msgid "Status"
+msgstr "Төлөв"
+
+#: profiles/templates/invitations/templates/invite_list.html:20
+#: profiles/templates/profiles/healthcareuser_list.html:20
+msgid "Actions"
+msgstr "Арга хэмжээ"
+
+#: profiles/templates/invitations/templates/invite_list.html:29
+msgid "Expired,Pending"
+msgstr "Хугацаа дууссан,Хүлээгдэж буй"
+
+#: profiles/templates/invitations/templates/invite_list.html:37
+msgid "Resend"
+msgstr "Дахин илгээх"
+
+#: profiles/templates/invitations/templates/invite_list.html:38
+#, python-format
+msgid "Resend invitation to %(email)s"
+msgstr "%(email)s харгалзах урилгыг дахин илгээх үү?"
+
+#: profiles/templates/invitations/templates/invite_list.html:42
+#: profiles/templates/profiles/healthcareuser_list.html:46
+msgid "Delete"
+msgstr "Устгах"
+
+#: profiles/templates/invitations/templates/invite_list.html:43
+#, python-format
+msgid "Delete invitation for %(email)s"
+msgstr "%(email)s харгалзах урилгыг устгаж, хүчингүй болгох"
+
+#: profiles/templates/invitations/templates/invite_list.html:51
+msgid "No invitations yet"
+msgstr "Явуулсан урилга одоогоор байхгүй байна."
+
+#: profiles/templates/invitations/templates/locked.html:4
+#: profiles/templates/invitations/templates/locked.html:7
+msgid "Invitation limit reached"
+msgstr "Нийт боломжит урилгын тоо тулсан байна."
+
+#: profiles/templates/invitations/templates/locked.html:8
+msgid "You are sending too many invitations. Try again later."
+msgstr "Нэг дор хэтэрхий их урилга явуулж буй тул та түр хүлээгээд дахин оролдоно уу."
+
+#: profiles/templates/profiles/2fa-resend.html:7
+#: profiles/templates/profiles/2fa-resend.html:14
+#: profiles/templates/profiles/2fa-resend.html:16
+msgid "Re-send security code"
+msgstr "Нууц кодыг дахин илгээх"
+
+#: profiles/templates/profiles/2fa-resend.html:15
+msgid "If you did not get the code, we can send it again."
+msgstr "Танд код очоогүй бол бид дахин илгээх боломжтой."
+
+#: profiles/templates/profiles/2fa-resend.html:18
+msgid "Cannot get text messages?"
+msgstr "Мэссэж авах боломжгүй байна уу?"
+
+#: profiles/templates/profiles/2fa.html:7
+msgid "Validate your code"
+msgstr "Нууц кодоо шалгана уу"
+
+#: profiles/templates/profiles/2fa.html:14
+msgid "Enter your security code"
+msgstr "Нууц кодоо оруулна уу"
+
+#: profiles/templates/profiles/2fa.html:18
+msgid "You kept these codes on paper."
+msgstr "Та энэ кодыг цаасан дээр хадгалж авсан байгаа,"
+
+#: profiles/templates/profiles/2fa.html:22
+#: profiles/templates/profiles/2fa.html:31
+msgid "We’ve sent you a text message with a security code."
+msgstr "Бид танд нууц код мэссэжээр илгээлээ."
+
+#: profiles/templates/profiles/2fa.html:26
+msgid "We’ve texted you a security code and you’ve also got codes on paper."
+msgstr "Бид танд нууц код илгээлээ."
+
+#: profiles/templates/profiles/2fa.html:41
+#: profiles/templates/profiles/2fa.html:48
+msgid "Resend security code?"
+msgstr "Нууц кодыг дахин илгээх үү?"
+
+#: profiles/templates/profiles/edit.html:14
+msgid "Update"
+msgstr "Шинэчлэх"
+
+#: profiles/templates/profiles/healthcareuser_confirm_delete.html:6
+msgid "Confirm delete user"
+msgstr "Хэрэглэгч устгахыг баталгаажуулах"
+
+#: profiles/templates/profiles/healthcareuser_confirm_delete.html:12
+#, python-format
+msgid "Are you sure you want to delete the account at %(email)s?"
+msgstr "%(email)s харгалзах аккаунтыг яг устгах уу?"
+
+#: profiles/templates/profiles/healthcareuser_confirm_delete.html:13
+#, python-format
+msgid "%(name)s will not be able to log in and their details will be deleted."
+msgstr "%(name)s нэвтрэх боломжгүй болж байгаа бөгөөд мэдээлэл нь удахгүй устах болно."
+
+#: profiles/templates/profiles/healthcareuser_confirm_delete.html:14
+msgid "You can create a new account for them later."
+msgstr "Аккаунт дараа нь үүсгэж өгөх боломжтой"
+
+#: profiles/templates/profiles/healthcareuser_confirm_delete.html:15
+msgid "Yes, delete"
+msgstr "Тийм, устга"
+
+#: profiles/templates/profiles/healthcareuser_confirm_delete.html:15
+msgid "No, keep"
+msgstr "Үгүй, байгаагаар нь авч үлдэх"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:9
+#: profiles/templates/profiles/healthcareuser_detail.html:18
+#: profiles/templates/profiles/healthcareuser_detail.html:22
+msgid "User profile"
+msgstr "Профайл"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:26
+msgid "Name"
+msgstr "Нэр"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:36
+msgid "Change name"
+msgstr "Нэр солих"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:39
+#: profiles/templates/profiles/healthcareuser_detail.html:61
+#: profiles/templates/profiles/healthcareuser_detail.html:93
+msgid "Change"
+msgstr "Солих"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:58
+msgid "Change mobile phone number"
+msgstr "Утасны дугаараа солих"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:68
+msgid "Yubikey"
+msgstr "Yubikey"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:70
+msgid "Enabled,Not enabled"
+msgstr "Нээгдсэн,Хаагдсан"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:76
+msgid "Remove your Yubikey"
+msgstr "Yubikey устгах"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:80
+msgid "Register a Yubikey"
+msgstr "Yubikey бүртгүүлэх"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:99
+msgid "Security Codes"
+msgstr "Нууц код"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:103
+msgid "code"
+msgstr "код"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:103
+msgid "codes"
+msgstr "код"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:104
+msgid "remaining"
+msgstr "үлдэж буй"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:112
+msgid "Get security codes"
+msgstr "Нууц код авах"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:115
+msgid "View security codes"
+msgstr "Нууц кодыг харах"
+
+#: profiles/templates/profiles/healthcareuser_detail.html:126
+msgid "Back to accounts"
+msgstr "Аккаунт хэсэг рүү буцах"
+
+#: profiles/templates/profiles/healthcareuser_list.html:15
+msgid "User accounts"
+msgstr "Хэрэглэгчдийн аккаунт"
+
+#: profiles/templates/profiles/healthcareuser_list.html:19
+msgid "Permissions"
+msgstr "Зөвшөөрөл"
+
+#: profiles/templates/profiles/healthcareuser_list.html:29
+msgid "Admin,Staff"
+msgstr "Админ,Ажилчид"
+
+#: profiles/templates/profiles/healthcareuser_list.html:36
+msgid "View"
+msgstr "Харах"
+
+#: profiles/templates/profiles/healthcareuser_list.html:37
+#, python-format
+msgid "View account for %(email)s"
+msgstr "%(email)s харгалзах аккаунтын мэдээллийг харах"
+
+#: profiles/templates/profiles/healthcareuser_list.html:39
+msgid "Edit"
+msgstr "Засах"
+
+#: profiles/templates/profiles/healthcareuser_list.html:40
+#, python-format
+msgid "Edit account for %(email)s"
+msgstr "%(email)s харгалзах аккаунтын мэдээллийг засах"
+
+#: profiles/templates/profiles/healthcareuser_list.html:47
+#, python-format
+msgid "Delete account for %(email)s"
+msgstr "%(email)s харгалзах аккаунтыг устгах"
+
+#: profiles/templates/profiles/healthcareuser_list.html:53
+msgid "No users yet."
+msgstr "Хэрэглэгч бүртгүүлээгүй байна."
+
+#: profiles/templates/profiles/privacy.html:9
+msgid "Privacy notice for COVID Alert Portal"
+msgstr "Нууцлалын талаарх мэдэгдэл"
+
+#: profiles/templates/profiles/privacy.html:10
+msgid ""
+"\n"
+"        <ul class=\"paragraphs\">\n"
+"        <li>\n"
+"            <b>We need your personal information</b> so you can use the "
+"portal to generate one-time keys.\n"
+"        </li>\n"
+"        <li>\n"
+"            <b>We log all activity and information in the portal</b>, "
+"including:\n"
+"            <ul class=\"disc\">\n"
+"                <li>each time you generate a key.</li>\n"
+"                <li>personal information you share with the portal, such as "
+"your phone number.</li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li>\n"
+"            <b>We are allowed to use this information</b> under the "
+"<em>Department of Health Act</em> and the <em>Financial Administration Act</"
+"em>.\n"
+"        </li>\n"
+"        <li>\n"
+"            <b>We’ll only share your personal information if we detect "
+"illegal activity.</b> Then we may give your information to law enforcement.\n"
+"        </li>\n"
+"        <li>\n"
+"            <b>You have the right to access, review and correct your "
+"personal information.</b> You can correct most information in the portal by "
+"yourself.\n"
+"        </li>\n"
+"        <li>\n"
+"            <b>You have the right to complain</b> about how we use your "
+"information to the <a href=\"https://www.priv.gc.ca/en/for-individuals/\" "
+"target=\"_blank\">Privacy Commissioner of Canada</a>.\n"
+"        </li>\n"
+"        </ul>\n"
+"        <h2>Questions?</h2>\n"
+"        <p>Contact <a href=\"mailto:hc.AlerteCOVIDAlert.sc@canada.ca"
+"\">Health Canada</a>.</p>\n"
+"    "
+msgstr ""
+"\n"
+"        <ul class=\"paragraphs\">\n"
+"        <li>\n"
+"            Та Нэг Удаагийн Код гаргаж авдаг болохын тулд <b>эхлээд өөрийнхөө мэдээллийг</b> бидэнд өгөх хэрэгтэй.\n"
+"        </li>\n"
+"        <li>\n"
+"            <b>Портал-д болж буй бүх үйлдэл болон мэдэллийг бид хадгалдаг </b>, "
+"Үүнд::\n"
+"            <ul class=\"disc\">\n"
+"                <li>Нэг Удаагийн Код гаргаж авах үйлдэл болгоныг.</li>\n"
+"                <li>Таны портал-д бүртгүүлэхдээ өгсөн мэдээллийг (утасны дугаар г.м).</li>\n"
+"            </ul>\n"
+"        </li>\n"
+"        <li>\n"
+"        </li>\n"
+"        <li>\n"
+"            Ямар нэг хууль бус, сэжигтэй үйлдэл гарсан тохиолдолд л <b>хувийн мэдээллийг</b> хууль эрх зүйн байгууллагад өгөх боломжтой.\n"
+"        </li>\n"
+"        <li>\n"
+"            <b>Та өөрийнхөө мэдээллийг харах, хянах, өөрчлөх. бүрэн боломжтой.\n"
+"        </li>\n"
+"        <li>\n"
+"        </li>\n"
+"        </ul>\n"
+"        <h2>Асуулт байна уу?</h2>\n"
+"        <p>Холбоо барих: <a href=\"mailto:info@covidmongolia.app"
+"\">COVID Tracing Mongolia</a>.</p>\n"
+"    "
+
+#: profiles/templates/profiles/quick-guide.html:5
+#: profiles/templates/profiles/quick-guide.html:9
+msgid "Quick guide to the portal"
+msgstr "Порталын талаарх мэдээлэл"
+
+#: profiles/templates/profiles/quick-guide.html:10
+msgid ""
+"\n"
+"        <h2>Part of the COVID Alert system</h2>\n"
+"        <p>The COVID Alert Portal is part of the system behind Canada’s free "
+"exposure notification app, <a href=\"https://www.canada.ca/en/public-health/"
+"services/diseases/coronavirus-disease-covid-19/covid-alert.html\" target="
+"\"_blank\">COVID Alert</a>.</p>\n"
+"        <p>COVID Alert does not replace manual contact tracing by local "
+"health authorities. It is just one part of the public health effort to limit "
+"the spread of COVID-19.</p>\n"
+"\n"
+"        <h3>One-time keys turn on exposure notifications</h3>\n"
+"        <p>You’ll give one-time keys to patients with COVID-19 who want to "
+"notify people they’ve been near. <b>Only give one key per patient.</b></p>\n"
+"        <p>Before giving a key, check the patient has the COVID Alert app on "
+"their phone.</p>\n"
+"        <h3>How the portal displays a one-time key</h3>\n"
+"    "
+msgstr ""
+"\n"
+"        <h2>COVID Tracing Mongolia системийн нэг хэсэг</h2>\n"
+"        <p>Портал нь Монгол Улсын технологийн салбарын залуучуудын сайн дураараа "
+"нээлттэй эхийн систем дээр суурилан босгож ирсэн цогц системийн нэг хэсэг юм.</p>\n"
+"        <p>COVID Tracing Mongolia цогц систем нь засийн газар, хууль эрх зүйн "
+"байгууллагуудаас хийгддэг гар аргаар хавьталыг илрүүлэх процессийг орлохгүй. "
+"Түүнд дэмжлэг болж, COVID-19 тархалтыг зогсооход нэмэр болох зориулалттай хөгжүүлэгдсэн "
+"систем болно.</p>\n"
+"\n"
+"        <h2>Нэг Удаагийн Код - exposure notification системийг асаах</h2>\n"
+"        <p>Та энэ вэб аппыг ашиглан COVID-19 эерэг оношилогдсон өвчтөнүүдэд "
+"Нэг Удаагийн Код гарган өгсөнөөр тэдгээр өвчтөнүүдтэй хавьтсан байж болзошгүй "
+"хүмүүст мэдэгдэл хүргэх боломжтой юм. <b>Нэг өвчтөнд нэг л код.</b></p>\n"
+"        <p>Нэг Удаагийн Кодыг өвчтөнд өгөхөөсөө өмнө тухайн өвчтөн гар утсандаа "
+"апп аа татаж авсныг заваал шалгана уу.</p>\n"
+"        <h3>Вэб апп нь Нэг Удаагийн Кодыг хэрхэн харуулдаг вэ: </h3>\n"
+"    "
+
+#: profiles/templates/profiles/quick-guide.html:24
+#, python-format
+msgid ""
+"\n"
+"        <p>The portal gives instructions for entering the key, with "
+"screenshots from the app. You can use the instructions to help patients "
+"enter the key.</p>\n"
+"        <h2>Only authorized healthcare workers generate and give one-time "
+"keys</h2>\n"
+"        <p>By entering the key, the patient confirms they have COVID-19. "
+"Then the app guides the patient through the steps to notify people of "
+"possible exposure.</p>\n"
+"        <p>Notifications do not give information about the patient or time "
+"of exposure.</p>\n"
+"        <h2>Only generate keys for real patients</h2>\n"
+"        <p>By comparing 3 stats, we can learn how people use the app. We "
+"need the number of:</p>\n"
+"        <ul><li>People with COVID -19.</li>\n"
+"        <li>One-time keys generated for patients.</li>\n"
+"        <li>Patients who enter keys in the app.</li></ul>\n"
+"        <p>To keep stats accurate, only generate a key when you intend to "
+"give it to a patient. This condition is part of our <a href=\"%(terms_url)s"
+"\">terms of use</a>.</p>\n"
+"        <h2>Create an account to generate keys</h2>\n"
+"        <p>You’ll get an email if you’re invited to create a portal account. "
+"Check your spam folder for the email.</p>\n"
+"        <p>Both administrators and healthcare workers can generate one-time "
+"keys.</p>\n"
+"        <p>Administrators can also:</p>\n"
+"        <ul><li>Invite healthcare workers to create portal accounts.</li>\n"
+"        <li>Delete portal accounts.</li></ul>\n"
+"        <h3>Keep a mobile phone with you</h3>\n"
+"        <p>The portal texts a security code to your mobile phone:</p>\n"
+"        <ul><li>When you create your account.</li>\n"
+"        <li>Anytime you log in.</li></ul>\n"
+"        <h3>Check your browser is compatible</h3>\n"
+"        <p>The portal works on any mobile or desktop device using a browser "
+"with automatic updates, including Chrome, Edge, Firefox, Opera and Safari. "
+"It’s also supported on Internet Explorer 11.</p>\n"
+"        <h2>If the portal is down</h2>\n"
+"        <h3>Follow local procedures for patients who need keys</h3>\n"
+"        <p>Public health authorities must determine what to do for:</p>\n"
+"        <ul><li>Situations when an individual healthcare worker cannot use "
+"their portal account.</li>\n"
+"        <li>System-wide portal outages.</li></ul>\n"
+"        <h3>Contact us for tech support</h3>\n"
+"        <p>To ask questions or give feedback about the portal, <a href="
+"\"mailto:assistance+healthcare@cds-snc.ca\">contact the Canadian Digital "
+"Service</a>.</p>\n"
+"    "
+msgstr ""
+"\n"
+"        <p>Портал вэб апп нь кодыг хэрхэн хийх зааварчилгаа өгнө. "
+"Нэмэлтээр апп-н харагдах байдлыг давхар харуулна. Та энэ зааварчилгааны "
+"дагуу өвчтөн утсанд код оруулахад туслах боломжтой.</p>\n"
+"        <h2>OЗөвхөн албан ёсны, эрх бүхий байгууллагын зөвшөөрөлтэй ажилчид "
+"Нэг Удаагийн Кодыг гаргаж авах болон өвчтнүүдэд өгнө </h2>"
+"        <p>Нэг Удаагийн Кодыг оруулсанаар өвчтөн нь COVID-19 эерэг оношилогдсон гэдгээ хүлээн зөвшөөрч байгаа юм. "
+"Үүний дараа апп нь өвчтөнд зааварчилгаа өгч ойрын хавьталтад орсон байж магадгүй хүмүүст мэдэгдэл хүргэх мэдээллийг өгнө. </p>\n"
+"        <p>Мэдэгдэлд өвчтөний хувийн мэдээлэл, цаг хугацааны талаарх мэдээлэл юу ч байхгүй. </p>\n"
+"        <h2>Жинхэнэ өвчтөнүүдэд л Нэг Удаагийн Код гаргаж өгнө гэдгийг анхаарна уу</h2>\n"
+"        <p>3 статистикийг харсанаар бид хүмүүс хэрхэн апп-ыг хэрэглэж байгааг мэдэх боломжтой. Үүнд хэрэгтэй 3 тоо нь: </p>\n"
+"        <ul>\n"
+"            <li>COVID-19 эерэг өвчтний тоо.</li>\n"
+"            <li>Нэг Удаагийн Код гаргасан тоо.</li>\n"
+"            <li>Гар утасны апп даа кодыг оруулсан өвчтөний тоо.</li>\n"
+"        </ul>\n"
+"        <p>Тэгэхээр эдгээр статистин тоог аль болох зөв байлгахын тулд яг "
+" шаардлагатай үед, өвчтөн COVID оношилгоо батлагдсан тохиолдолд л код гаргаж өгнө үү. "
+"        <h2>Нэг Удаагийн Код үүсгэхийн тулд эхлээд өөрийнхөө аккаунтыг үүсгэнэ</h2>\n"
+"        <p>Портал-д аккаунт үүсгэх эрхтэй бол танд имэйл очих болно. "
+"Имэйл очоогүй бол spam folder оо шалгаарай.</p>\n"
+"        <p>Админ болон эрүүл мэндийн, албан ёсны эрх бүхий байгууллагын ажилчид Нэг Удаагийн Код авах эрхтэй.</p>\n"
+"        <p>Админы бусад эрх:</p>\n"
+"        <ul><li>Эрүүл мэндийн ажилчдыг Портал-д орох урилгын имэйл илгээх</li>\n"
+"        <li>Портал-д байгаа аккаунт устгах.</li></ul>\n"
+"        <h3>Биедээ гар утсаа байнга байлгаарай</h3>\n"
+"        <p>Портал аас гар утасруу нууц код дараах тохиолдолд илгээнэ:</p>\n"
+"        <ul><li>Шинэ аккаунт үүсгэхэд</li>\n"
+"        <li>Нэвтрэх үед.</li></ul>\n"
+"        <h3>Browser аа зөв эсэхийг шалгаарай.</h3>\n"
+"        <p>Портал нь гар утасны болон суурин компьютер дээр байдаг ямар ч browser "
+"дээр ажилах чадавхитай. Үүнд Chrome, Edge, Firefox, Opera, Safari болон Internet Explorer 11 дээр ажиллана."
+" <a href=\"%(terms_url)s\">Үйлчилгээний Дүрэм</a>"
+"    "
+
+#: profiles/templates/profiles/quick-guide.html:55
+#: profiles/templates/profiles/welcome.html:35
+msgid "Visit portal"
+msgstr "Портал руу очих"
+
+#: profiles/templates/profiles/signup.html:6
+#: profiles/templates/profiles/signup.html:13
+#: profiles/templates/profiles/signup.html:14
+msgid "Create account"
+msgstr "Аккаунт үүсгэх"
+
+#: profiles/templates/profiles/signup.html:14
+msgid ""
+"<p>By creating an account, you agree to the COVID Alert Portal <a href=\"/en/"
+"terms\" target=\"_blank\">Terms of use</a>.</p>"
+msgstr ""
+"<p>Аккаунт үүсгэснээр та портал вэб аппын Хэрэглээний Дүрмийг уншсан, "
+"хүлээн зөвшөөрч буй гэдгээ баталж байгаа юм."
+
+#: profiles/templates/profiles/signup_2fa.html:6
+#: profiles/templates/profiles/signup_2fa.html:13
+msgid "Enter mobile phone number"
+msgstr "Гар утасны дугаараа оруулна уу"
+
+#: profiles/templates/profiles/terms.html:11
+#, python-format
+msgid ""
+"\n"
+"        <p>The COVID Alert Portal is only for authorized healthcare workers "
+"in Canada.</p>\n"
+"        <p>By using the portal, you agree to:</p>\n"
+"        <ul class=\"expanded\">\n"
+"            <li>Follow your healthcare authority’s procedures.</li>\n"
+"            <li>Only give one key per each patient diagnosed with COVID-19 "
+"by your healthcare authority. Do not generate a key for any other reason.</"
+"li>\n"
+"            <li>Prevent other people from using your account.  You must "
+"protect your username and password, even from other people working for a "
+"healthcare authority.</li>\n"
+"            <li>\n"
+"            Immediately report any security issues with your account to "
+"both:\n"
+"                <ul>\n"
+"                    <li>your administrator</li>\n"
+"                    <li><a href=\"mailto:security@cds-snc.ca\">security@cds-"
+"snc.ca</a></li>\n"
+"                </ul>\n"
+"            </li>\n"
+"        </ul>\n"
+"        <p>If we detect any misuse of the portal or security issues with "
+"your account, we’ll immediately disable your account.</p>\n"
+"        <h2>Questions?</h2>\n"
+"        <p>For questions about these terms of use, or to report a technical "
+"issue, <a href=\"%(contact_url)s\">contact us</a>.</p>\n"
+"    "
+msgstr ""
+"\n"
+"        <p>Энэхүү портал вэб апп нь зөвхөн албан ёсны, эрх бүхий байгууллага "
+"(ЭМЯ, УОК...) болон тэдгээрээс зөвшөөрөл олгосон ажилчид ашиглах боломжтой систем юм.</p>\n"
+"        <p>Энэхүү порталыг ашигласнаар та доорх зүйлсийг хүлээн зөвшөөрч байгаагаа баталж байгаа юм:</p>\n"
+"        <ul class=\"expanded\">\n"
+"            <li>Эрүүл мэндийн эрх бүхий байгууллагын заавар, зөвлөмжийг дагаж мөрдөх.</li>\n"
+"            <li>Нэг өвчтөнд нэг л код гаргаж өгөх.</li>\n"
+"            <li>Өөр хүнд аккаунтаа хэрэглүүлэхгүй байх. (Хэрэглэгчийн нэр, нууц "
+"үгээ бусад эрх бүхий байгууллагын ажилчдад ч өгөхгүй нууцлах ёстой) </li>\n"
+"            <li>\n"
+"            Ямар нэг аюулгүй байдалтай холбоотой асуудал гарвал нэн даруй:\n"
+"                <ul>\n"
+"                    <li><админ/li>\n"
+"                    <li><a href=\"mailto:info@covidmongolia.app\">info@covidmongolia.app</a></li>\n"
+"                </ul>\n"
+"            </li>\n"
+"        </ul>\n"
+"        <p>Хэрвээ таны аккаунт аас ямар нэг хэвийн бус, сэжигтэй хэрэглээ ажиглагдвал таны "
+"аккаунтыг тэр дор нь хаах арга хэмжээ авахыг анхаарна уу.</p>\n"
+"        <h2>Асуулт байна уу?</h2>\n"
+"        <p>Танд ямар нэг асуулт байвал бидэнд хандана уу: <a href=\"%(contact_url)s\">Холбоо барих</a></p>\n"
+"    "
+
+#: profiles/templates/profiles/welcome.html:6
+msgid "Welcome to the portal"
+msgstr "Портал-д тавтай морил!"
+
+#: profiles/templates/profiles/welcome.html:10
+msgid ""
+"\n"
+"        <h1>Welcome to the portal</h1>\n"
+"        <h2>One-time keys turn on exposure notifications</h2>\n"
+"        <p>You’ll give one-time keys to patients with COVID-19 who want to "
+"notify people they’ve been near. <b>Only give one key per patient.</b></p>\n"
+"        <p>Before giving a key, check the patient has the COVID Alert app on "
+"their phone.</p>\n"
+"        <h3>How the portal displays a one-time key</h3>\n"
+"    "
+msgstr ""
+"\n"
+"        <h1>Портал вэб апп-д тавтай морил!</h1>\n"
+"        <h2>Нэг Удаагийн Код - exposure notification системийг асаах</h2>\n"
+"        <p>Та энэ вэб аппыг ашиглан COVID-19 эерэг оношилогдсон өвчтөнүүдэд "
+"Нэг Удаагийн Код гарган өгсөнөөр тэдгээр өвчтөнүүдтэй хавьтсан байж болзошгүй "
+"хүмүүст мэдэгдэл хүргэх боломжтой юм. <b>Нэг өвчтөнд нэг л код.</b></p>\n"
+"        <p>Нэг Удаагийн Кодыг өвчтөнд өгөхөөсөө өмнө тухайн өвчтөн гар утсандаа "
+"апп аа татаж авсныг заваал шалгана уу.</p>\n"
+"        <h3>Вэб апп нь Нэг Удаагийн Кодыг хэрхэн харуулдаг вэ: </h3>\n"
+"    "
+
+#: profiles/templates/profiles/welcome.html:21
+#, python-format
+msgid ""
+"\n"
+"        <p>The portal gives instructions for entering the key, with "
+"screenshots from the app. You can use the instructions to help patients "
+"enter the key.</p>\n"
+"        <h2>Only authorized healthcare workers generate and give one-time "
+"keys</h2>\n"
+"        <p>By entering the key, the patient confirms they have COVID-19. "
+"Then the app guides the patient through the steps to notify people of "
+"possible exposure.</p>\n"
+"        <p>Notifications do not give information about the patient or time "
+"of exposure.</p>\n"
+"        <h2>Only generate keys for real patients</h2>\n"
+"        <p>By comparing 3 stats, we can learn how people use the app. We "
+"need the number of:</p>\n"
+"        <ul>\n"
+"            <li>People with COVID-19.</li>\n"
+"            <li>One-time keys generated for patients.</li>\n"
+"            <li>Patients who enter keys in the app.</li>\n"
+"        </ul>\n"
+"        <p>To keep stats accurate, <b>only</b> generate a key when you "
+"intend to give it to a patient. This condition is part of our <a href="
+"\"%(terms_url)s\" target=\"_blank\">terms of use</a>.</p>\n"
+"    "
+msgstr ""
+"\n"
+"        <p>Портал вэб апп нь кодыг хэрхэн хийх зааварчилгаа өгнө. "
+"Нэмэлтээр апп-н харагдах байдлыг давхар харуулна. Та энэ зааварчилгааны "
+"дагуу өвчтөн утсанд код оруулахад туслах боломжтой.</p>\n"
+"        <h2>OЗөвхөн албан ёсны, эрх бүхий байгууллагын зөвшөөрөлтэй ажилчид "
+"Нэг Удаагийн Кодыг гаргаж авах болон өвчтнүүдэд өгнө </h2>"
+"        <p>Нэг Удаагийн Кодыг оруулсанаар өвчтөн нь COVID-19 эерэг оношилогдсон гэдгээ хүлээн зөвшөөрч байгаа юм. "
+"Үүний дараа апп нь өвчтөнд зааварчилгаа өгч ойрын хавьталтад орсон байж магадгүй хүмүүст мэдэгдэл хүргэх мэдээллийг өгнө. </p>\n"
+"        <p>Мэдэгдэлд өвчтөний хувийн мэдээлэл, цаг хугацааны талаарх мэдээлэл юу ч байхгүй. </p>\n"
+"        <h2>Жинхэнэ өвчтөнүүдэд л Нэг Удаагийн Код гаргаж өгнө гэдгийг анхаарна уу</h2>\n"
+"        <p>3 статистикийг харсанаар бид хүмүүс хэрхэн апп-ыг хэрэглэж байгааг мэдэх боломжтой. Үүнд хэрэгтэй 3 тоо нь: </p>\n"
+"        <ul>\n"
+"            <li>COVID-19 эерэг өвчтний тоо.</li>\n"
+"            <li>Нэг Удаагийн Код гаргасан тоо.</li>\n"
+"            <li>Гар утасны апп даа кодыг оруулсан өвчтөний тоо.</li>\n"
+"        </ul>\n"
+"        <p>Тэгэхээр эдгээр статистин тоог аль болох зөв байлгахын тулд яг "
+" шаардлагатай үед, өвчтөн COVID оношилгоо батлагдсан тохиолдолд л код гаргаж өгнө үү. "
+" <a href=\"%(terms_url)s\" target=\"_blank\">Үйлчилгээний Дүрэм</a>"
+
+#: profiles/templates/profiles/yubikey_create.html:6
+#: profiles/templates/profiles/yubikey_create.html:13
+msgid "Add Yubikey token"
+msgstr "Yubikey token нэмэх"
+
+#: profiles/templates/profiles/yubikey_create.html:14
+#: profiles/templates/profiles/yubikey_verify.html:14
+msgid "Continue"
+msgstr "Үргэлжлүүлэх"
+
+#: profiles/templates/profiles/yubikey_delete.html:6
+#: profiles/templates/profiles/yubikey_delete.html:13
+msgid "Confirm deletion of Yubikey"
+msgstr "Yubikey устгахыг зөвшөөрөх"
+
+#: profiles/templates/profiles/yubikey_verify.html:6
+#: profiles/templates/profiles/yubikey_verify.html:13
+msgid "Yubikey verification"
+msgstr "Yubikey баталгаажлуулалт"
+
+#: profiles/validators.py:16
+msgid "Your password must be more difficult to guess."
+msgstr "Нууц үг таахад хэцүү байх ёстой"
+
+#: profiles/validators.py:23
+msgid "Your password cannot include anything about COVID."
+msgstr "Нууц үг COVID той холбоотой байж болохгүй"
+
+#: profiles/validators.py:28
+msgid "Your password must be hard to guess."
+msgstr "Нууц үг хүн таахад амаргүй тэмдэгтүүдээс бүрдсэн байвал сайн."
+
+#: profiles/validators.py:35
+#, python-format
+msgid "Your password needs at least %(min_length)d characters."
+msgstr "Нууц үг дор хаяж %(min_length)d тэмдэгтээс бүрдсэн байна"
+
+#: profiles/validators.py:41
+#, python-format
+msgid "Your password must be at least %(min_length)d characters."
+msgstr "Нууц үг дор хаяж %(min_length)d тэмдэгтээс бүрдсэн байна"
+
+#: profiles/validators.py:53
+msgid "Your password must be different from your other personal information."
+msgstr "Нууц үг таны аль нэг хувийн мэдээлэлтэй төстэй байж болохгүй."
+
+#: profiles/validators.py:59
+msgid "Your password cannot be similar to your name or email address."
+msgstr "Нууц үг нэр эсвэл имэйл хаягтай төстэй байж болохгүй."
+
+#: profiles/validators.py:67
+msgid ""
+"Your password cannot be only numbers. It must have letters or other "
+"characters also."
+msgstr "Нууц үг зөвхөн тооноос бүрдэж болохгүй. Үсэг оруулж өгөөрэй."
+
+#: profiles/validators.py:73
+msgid "Your password cannot be only numbers."
+msgstr "Нууц үг дан тооноос бүрдэж болохгүй."
+
+#: profiles/views.py:278
+msgid "Please try again later."
+msgstr "Дахин оролдоно уу."
+
+#: profiles/views.py:281
+msgid "You entered the wrong code."
+msgstr "Таны оруулсан код буруу байна."
+
+#: profiles/views.py:302
+msgid "Security code has been sent."
+msgstr "Код илгээлээ."
+
+#: profiles/views.py:434
+#, python-format
+msgid "You deleted the account for ‘%(email)s’."
+msgstr "Та ‘%(email)s’ имэйл тэй аккаунтыг устгасан байна"
+
+#: profiles/views.py:446
+msgid "Your session timed out. Log in again to continue using the portal."
+msgstr "Хэт удаан идэвхгүй байсан учир таны холболтыг салгалаа. Дахин нэвтэрнэ үү."

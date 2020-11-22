@@ -459,13 +459,13 @@ def password_reset_complete(request):
 
 def switch_language(request):
     current_lang = request.LANGUAGE_CODE
-    lang = "en"
-    if current_lang == "en":
-        lang = "fr"
+    lang = "mn"
+    if current_lang == "mn":
+        lang = "mn"
 
     if check_for_language(lang) is False:
         # Make sure the lang has been enabled in the config. If not, default to en
-        lang = "en"
+        lang = "mn"
 
     # Take the referer by default
     next_url = urlparse(request.META.get("HTTP_REFERER"))

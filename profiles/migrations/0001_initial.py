@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('last_login', models.DateTimeField(blank=True, null=True, verbose_name='last login')),
                 ('email', models.EmailField(max_length=255, unique=True, verbose_name='email address')),
                 ('name', models.CharField(max_length=200)),
-                ('language', models.CharField(choices=[('en', 'English'), ('fr', 'French')], default='en', max_length=10)),
+                ('language', models.CharField(choices=[('mn', 'Mongolian'), ('en', 'English'), ('fr', 'French')], default='mn', max_length=10)),
                 ('is_active', models.BooleanField(default=True)),
                 ('is_admin', models.BooleanField(default=False)),
             ],
