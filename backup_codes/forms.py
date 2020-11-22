@@ -25,7 +25,7 @@ class RequestBackupCodesForm(HealthcareBaseForm):
             notifications_client.send_email_notification(
                 email_address=self.admin.email,
                 template_id=settings.BACKUP_CODE_ADMIN_EMAIL_TEMPLATE_ID.get(
-                    language or "en"
+                    language or "mn"
                 ),
                 personalisation={
                     "name": self.admin.name,

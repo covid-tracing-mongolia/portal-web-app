@@ -6,7 +6,7 @@
 {% timezone "Canada/Eastern" %}
   <p>{% blocktrans %}Key <strong>expires on</strong>{% endblocktrans %}
     <time id="expiry-datetime" datetime="{{ expiry|date:'c' }}">
-      {% if LANGUAGE_CODE == 'en' %}
+      {% if LANGUAGE_CODE == 'mn' %}
           {{ expiry|date:"F j" }}
       {% else %}
           {{ expiry|date:"j F" }}
@@ -14,7 +14,7 @@
 
       {% trans "at" %}
 
-      {% if LANGUAGE_CODE == 'en' %}
+      {% if LANGUAGE_CODE == 'mn' %}
           {{ expiry|date:"f a e" }}
       {% else %}
           {{ expiry|date:"G \h i e" }}

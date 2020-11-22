@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("expiry-datetime").innerHTML = "<b>" + expiry.format("D MMMM") + " à " + expiry.format("HH [h] mm") + "</b>, heure locale";
   } else {
     // example : July 12 at 6:12 pm local time
-    document.getElementById("expiry-datetime").innerHTML = "<b>" + expiry.format("MMMM D") + " at " + expiry.format("h:mm a") + "</b> local time";
+    document.getElementById("expiry-datetime").innerHTML = "<b>" + expiry.format("MMMM D") + ", " + expiry.format("h:mm a") + "</b> цаг.";
   }
 }, false);
 

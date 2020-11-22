@@ -431,10 +431,10 @@ class i18nTestView(TestCase):
 
     def test_root_with_accept_language_header_en(self):
         """
-        Test we end up on English start page from root url if "Accept-Language" header is "en"
+        Test we end up on English start page from root url if "Accept-Language" header is "mn"
         """
         client = Client(
-            HTTP_ACCEPT_LANGUAGE="en",
+            HTTP_ACCEPT_LANGUAGE="mn",
         )
         response = client.get("/", follow=True)
         self.assertEqual(response.status_code, 200)
@@ -460,9 +460,9 @@ class i18nTestView(TestCase):
 
     def test_start_with_language_setting_en(self):
         """
-        Test we end up on English start page from start url "en" is active language
+        Test we end up on English start page from start url "mn" is active language
         """
-        translation.activate("en")
+        translation.activate("mn")
         response = self.client.get(reverse("login"))
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.request["PATH_INFO"], "/en/login/")

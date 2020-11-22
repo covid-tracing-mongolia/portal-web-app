@@ -12,13 +12,5 @@
     {% elif request.resolver_match.url_name != 'login' %}
       <li><a href="{% url 'login' %}">{% trans 'Log in' %}</a></li>
     {% endif %}
-    <li>
-        {% get_current_language as LANGUAGE_CODE %}
-        {% get_language_info for "en" as langEn %}
-        {% get_language_info for "fr" as langFr %}
-
-        <h2 class="visually-hidden">{% trans "Language selection" %}</h2>
-        <a href="{% url 'switch_language' %}">{% get_lang_title LANGUAGE_CODE langEn langFr %}</a>
-    </li>
   </ul>
 </nav>

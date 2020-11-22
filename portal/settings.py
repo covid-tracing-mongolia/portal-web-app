@@ -187,6 +187,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGES = (
+    ("mn", "Mongolian"),
     ("en", "English"),
     ("fr", "French"),
 )
@@ -195,7 +196,7 @@ LOCALE_PATHS = [
     os.path.join(BASE_DIR, "locale"),
 ]
 
-LANGUAGE_CODE = "en"
+LANGUAGE_CODE = "mn"
 
 TIME_ZONE = "UTC"
 
@@ -307,15 +308,18 @@ DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL")
 INVITATIONS_ADAPTER = "profiles.utils.invitation_adapter.HealthcareInvitationAdapter"
 
 BACKUP_CODE_ADMIN_EMAIL_TEMPLATE_ID = {
+    "mn": os.getenv("BACKUP_CODE_ADMIN_EMAIL_TEMPLATE_ID_MN"),
     "en": os.getenv("BACKUP_CODE_ADMIN_EMAIL_TEMPLATE_ID_EN"),
     "fr": os.getenv("BACKUP_CODE_ADMIN_EMAIL_TEMPLATE_ID_FR"),
 }
 
 PASSWORD_RESET_EMAIL_TEMPLATE_ID = {
+    "mn": os.getenv("PASSWORD_RESET_EMAIL_TEMPLATE_ID_MN"),
     "en": os.getenv("PASSWORD_RESET_EMAIL_TEMPLATE_ID_EN"),
     "fr": os.getenv("PASSWORD_RESET_EMAIL_TEMPLATE_ID_FR"),
 }
 INVITATION_EMAIL_TEMPLATE_ID = {
+    "mn": os.getenv("INVITATION_EMAIL_TEMPLATE_ID_MN"),
     "en": os.getenv("INVITATION_EMAIL_TEMPLATE_ID_EN"),
     "fr": os.getenv("INVITATION_EMAIL_TEMPLATE_ID_FR"),
 }
