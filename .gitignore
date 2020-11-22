@@ -15,3 +15,4 @@ secrets.tfvars
 *.tfplan
 .coverage
 docker-compose.yml
+get-pip.py
