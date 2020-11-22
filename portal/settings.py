@@ -157,7 +157,7 @@ if os.getenv("DATABASE_URL") == "":
 
 if os.getenv("DATABASE_URL"):
     db_config = dj_database_url.config(
-        default=os.getenv("DATABASE_URL"), conn_max_age=600, ssl_require=is_prod
+        default=os.getenv("DATABASE_URL"), conn_max_age=600, ssl_require=False
     )
 else:
     db_config = dj_database_url.config(
