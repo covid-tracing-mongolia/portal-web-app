@@ -186,7 +186,7 @@ class SignUp2FAView(LoginRequiredMixin, FormView):
     template_name = "profiles/signup_2fa.html"
 
     def get_success_url(self):
-        return "{}?next={}".format(reverse_lazy("login_2fa"), reverse_lazy("welcome"))
+        return "{}?next={}".format(reverse_lazy("welcome"), reverse_lazy("welcome"))
 
     def get(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
@@ -289,7 +289,7 @@ class Login2FAView(LoginRequiredMixin, FormView):
 class Resend2FAView(LoginRequiredMixin, FormView):
     form_class = Resend2FACodeForm
     template_name = "profiles/2fa-resend.html"
-    success_url = reverse_lazy("login_2fa")
+    success_url = reverse_lazy("welcome")
 
     def get_form_kwargs(self):
         kwargs = super().get_form_kwargs()
@@ -454,7 +454,7 @@ def password_reset_complete(request):
         return redirect(reverse_lazy("yubikey_verify"))
     else:
         """ generate_2fa_code(request.user) """
-        return redirect(reverse_lazy("login_2fa"))
+        return redirect(reverse_lazy("welcome"))
 
 
 def switch_language(request):
