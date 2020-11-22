@@ -15,4 +15,7 @@ secrets.tfvars
 *.tfplan
 .coverage
 docker-compose.yml
+<<<<<<< Updated upstream
 get-pip.py
+=======
+>>>>>>> Stashed changes
