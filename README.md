@@ -1,23 +1,23 @@
-[La version française suit.](#portail-de-soins-de-santé-covid)
+# COVID Tracing Mongolia - Портал вэб апп
 
-# COVID Alert Portal
+Албан ёсны, эрх бүхий байгууллагууд (ЭМЯ, УОК) болон түүний ажилчид нь энэхүү портал вэб аппыг ашиглан _Нэг Удаагийн Код_ гарган авч, COVID шинжилгээгээр эерэг гарсан хүмүүст кодыг өгсөнөөр тухайн хүмүүс уг кодыг гар утасныхаа апп дотор хийснээр өөсдөдтэй нь өнгөрсөн 14 хоногт хавьтсан хүмүүсийн гар утсанд анхааруулга очих юм. Тиймээс энэхүү вэб апп нь зөвхөн батлагдсан тохиолдлуудад, албан ёсны эрхтэй эрх бүхий ажилчид ашиглан Нэг Удаагийн Код гаргаж авах чухал хэрэгслүүр болж таарч байгаа юм. 
 
-This repository implements a healthcare portal to complement the [Government of Canada COVID Alert app](https://github.com/cds-snc/covid-alert-app). This portal provides authenticated healthcare providers unique temporary codes which can be shared with COVID-diagnosed individuals. This code gives individuals access to upload their random IDs via the mobile app if they choose. No personal information is collected by the app and there is no association between the codes and specific tests.
+COVID Tracing Mongolia нь [CovidShield]((https://www.covidshield.app/)) гэсэн нээлттэй эхийн (Apache 2.0 License) төсөл дээр үндэслэн хийсэн төсөл юм. CovidShield төслийг Канада-д төвтэй Shopify компанийн сайн дурын инженерүүд зохион бүтээж, хөгжүүлсэн байдаг. COVID Tracing Mongolia-г Цар Тахалтай тэмцэж байгаа өнөө үед технологийн салбарт олон жил ажилласаны хувьд улсдаа чадах зүйлээрээ хувь нэмрээ оруулах үүднээс сайн дурын, Монгол мэргэжилтнүүд хөгжүүлсэн юм.
 
-The Portal is part of the [COVID Shield](https://www.covidshield.app/) open-source reference implementation built by Shopify volunteers. For a high-level view on how the components work together, read through the [COVID Shield Rationale](https://github.com/CovidShield/rationale).
+Холбоо барих хүсэлтэй бол: amarbayar.amarsanaa@gmail.com гэсэн хаягаар холбогдоорой.
 
-## Technical overview
+## Техникийн Үндэс
 
-The app can be run as a python process or using `docker-compose`.
+Энэхүү портал вэб апп нь `docker-compose up` аар эсвэл өөрөө бие даасан python процесс болон ажиллах боломжтой.
 
-- Running the COVID Alert Portal locally as a python process requires [python3](https://www.python.org/downloads/) and a database, although an SQLite database will be created if no connection string exists.
-- Using `docker-compose`, you’ll need [Docker](https://www.docker.com/get-started) installed.
+- Бие даасан байдлаар ажиллуулах хүсэлтэй бол [python3](https://www.python.org/downloads/) болон өгөгдлийн сан суулгасан байх шаардлагатай. (Connection string тохиргоондоо оруулж өгөөгүй бол автоматаар SQLite өгөгдлийн сан сууна гэдгийг анхаарна уу).
+- `docker-compose` ашиглахын тулд урьдчилан [Docker](https://www.docker.com/get-started) суулгасан байх шаардлагатай.
 
-## Setup
+## Бэлтгэл / Тохиргоо
 
-### Activating a virtualenv
+### Virtualenv бэлэн болгох (Python процесс байдлаар дангаар нь ажиллуулах гэж байгаа тохиолдолд)
 
-Install [`pipenv`](https://pypi.org/project/pipenv/).
+Эхлээд [`pipenv`](https://pypi.org/project/pipenv/) суулгана. Дараа нь:
 
 ```sh
 # cd into project folder
@@ -26,120 +26,118 @@ pipenv shell    # activate virtualenv
 pipenv install  # install dependencies
 ```
 
-### Environment variables
+### Environment variables (хувьсагчдын тохиргоо)
 
-Environment variables are used to control app settings, and configuration for utilities and third-party services. Defaults are `''` or `None` unless otherwise specified.
+Python болон Django framework дээр үндэслэн ажиллуулж буй учир эдгээр технологийн хувьд хэрэглэгдэх environment variable уудыг тохируулж өгөх хэрэгтэй болно. Ингэснээр вэб портал нь өөрөө ямар тохиргоо, горимд ажиллах вэ гэдгээ мэдэж авах юм. Хувьсагчдын утгыг оноож өгөөгүй тохиолдолд үндсэн утга нь хоосон буюу `''` эсвэл `None` гэж тооцогдоно.
 
 <details>
-<summary>Detailed explanation of each environment variable</summary>
+<summary>Environment variable болгоны дэлгэрэнгүй тайлбар</summary>
 <div>
 
-#### App settings
+#### App тохиргоо
 
-- `DJANGO_ENV` (default: `development`): Turns on [`DEBUG`](https://docs.djangoproject.com/en/3.0/ref/settings/#debug) mode, as well as doesn't require HTTPS to run. For local development, leave this as `development`.
+- `DJANGO_ENV` (default: `development`): Энэ тохиргоо нь [`DEBUG`](https://docs.djangoproject.com/en/3.0/ref/settings/#debug) горимыг идэвхжүүлдэг бөгөөд HTTPS протоколыг заавал шаардахгүй болгодог. Ингэснээр хөгжүүлэлтийн орчинд хөгжүүлэгчид ажиллах боломжтой болно.
 
-- `DJANGO_SECRET_KEY`: The `SECRET_KEY` in Django is used to provide cryptographic signing, and should be set to a unique, unpredictable value. Django won't start unless this is set. [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#secret-key).
+- `DJANGO_SECRET_KEY`: Django framework-н `SECRET_KEY` гэсэн тохиргоо. Энэ нь мэдээллийг нууцлахад хэрэглэгдэх шифрлэлтийн алгоритмд хэрэгтэй нууц түлхүүр учир энэ хувьсагчийн утга нь тааж болшгүй байх хэрэгтэй. Энэ хувьсагчийн утгыг зааж өгөөгүй тохиолдолд Djangao ажиллахгүй гэдгийг анхаарна уу. [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#secret-key).
 
-- `DJANGO_ALLOWED_HOSTS`: A list of strings representing the host/domain names that this Django site can serve. Only needs to be set in prod. [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts).
+- `DJANGO_ALLOWED_HOSTS`: Илүү аюулгүй байдлын үүднээс энэхүү вэб аппыг тодорхой IP хаяг эсвэл domain name үүд нь мэдэгдэж байгаа газраас л ажиллахыг зөвшөөрч өгөх боломжтой. Ийм тохиолдолд тэдгээр IP хаяг эсвэл domain name үүдийг энд array байдлаар зааж өгөх боломжтой. [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts).
 
-- `DJANGO_ADMINS`: A list of all the people who get code error notifications. [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#admins).
+- `DJANGO_ADMINS`: Вэб апп дээр гэнэтийн алдаа гарах боломжтой. Алдаа гараад эхэлвэл тодорхой хүмүүст мэдээллэх боломжтой. Тэдгээр хүмүүсийн нэр болон имэйлийг энд бүртгүүлэн оруулж болно. Тэгсэнээр вэб апп дээр ямар нэг асуудал гарвал мэдээлэл нь тэр хүмүүст очно гэсэн үг. Энэ тохиргоог ажиллуулахын тулд имэйл сервэр ажиллуулж байх хэрэгтэй бөгөөд, түүнийгээ тусад нь холбож өгөх хэрэгтэй гэдгийг анхаарна уу. [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#admins).
 
-- `SU_DEFAULT_PASSWORD`: Setting to trigger the creation of a default superuser the first time the app is provisioned. If this variable exists, a default superuser will be created at `admin@cds-snc.ca` with this password.
+- `SU_DEFAULT_PASSWORD`: Вэб апп анхны удаа ажиллаж эхлэхэд хамгийн эхний админ эрхтэй хэрэглэгчийг (`uok_admin`) үүсгэх хэрэгтэй болно. Тэр хэрэглэгчийн нууц үг нь юу байхыг энд зааж өгнө. 
 
-##### database configuration
+##### Өгөгдлийн сангийн тохиргоо
 
-- `DATABASE_URL`: A string containing the database scheme, host, username, password, and port. The `DATABASE_URL` is parsed by [`dj-django-url`](https://pypi.org/project/dj-database-url/).
+- `DATABASE_URL`: Өгөгдлийн санд холбогдох тохиргооны мэдээлэл. (Scheme, host, username, password болон port). Энд оноож өгсөн мэдээллийг [`dj-django-url`](https://pypi.org/project/dj-database-url/)-р уншуулж авдаг.
 
-##### email configuration
+##### Имэйл тохиргоо
 
-- `EMAIL_BACKEND` (default: `django.core.mail.backends.console.EmailBackend`): The email backend to use. In production, this should be set to `django.core.mail.backends.smtp.EmailBackend`. [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#email-backend).
+- `EMAIL_BACKEND` (default: `django.core.mail.backends.console.EmailBackend`): Имэйл тохиргоо. Production орчинд энэ хувьсагчийг:  `django.core.mail.backends.smtp.EmailBackend` гэж тохируулах хэрэгтэй.. [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#email-backend).
 
-- `DEFAULT_FROM_EMAIL`: The email address that emails will say they have been sent from.
+- `DEFAULT_FROM_EMAIL`: Имэйлийн эх үүсвэрийн хаягийг оруулж өгнө. (Имэйл хүлээж авсан  хүмүүс хаанаас ирсэн имэйл вэ гэж харахаар энэ хаяг харагдана гэсэн үг)
 
-The following are only relevant for the `smtp` backend.
+Доорх хувьсагчууд зөвхөн `smtp` тохиргоотой имэйл сервэрүүдэд хамааралтай:
 
-- `EMAIL_HOST`: The host to use for sending email. [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#email-host).
+- `EMAIL_HOST`: Имэйл явуулах сервэр. [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#email-host).
 
-- `EMAIL_PORT`: Port to use for the SMTP server defined in EMAIL_HOST.
-  [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#email-port).
+- `EMAIL_PORT`: EMAIL_HOST д тааруулж өгсөн сервэр дээрх порт.
+  [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#email-port).
 
-- `EMAIL_HOST_USER`: Username to use for the SMTP server defined in `EMAIL_HOST`. [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#email-host-user).
+- `EMAIL_HOST_USER`: Username. [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#email-host-user).
 
-- `EMAIL_HOST_PASSWORD`: Password to use for the SMTP server defined in `EMAIL_HOST`. [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#email-host-password).
+- `EMAIL_HOST_PASSWORD`: Password. [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#email-host-password).
 
-- `EMAIL_USE_TLS` (default: `False`): Whether to use a TLS (secure) connection when talking to the SMTP server. [Read the docs here](https://docs.djangoproject.com/en/3.0/ref/settings/#email-use-tls).
+- `EMAIL_USE_TLS` (default: `False`): TLS (secure) ашиглах эсэх. [Дэлгэрэнгүй уншихыг хүсвэл.](https://docs.djangoproject.com/en/3.0/ref/settings/#email-use-tls).
 
-#### CovidAlert API settings
+#### Backend Server-д хандах API Тохиргоо
 
-- `API_ENDPOINT`: The API endpoint that returns one-time usage codes. If not set, the one-time codes will read as `0000 0000`.
+- `API_ENDPOINT`: _Нэг Удаагийн Код_ авах хүсэлтийг илгээх backend service-н хаяг. Хэрвээ энийг тохируулж өгөөгүй тохиолдолд _Нэг Удаагийн Код_ нь `0000 0000` гэж гарч ирнэ.
 
-- `API_AUTHORIZATION`: The credentials required to authenticate with the one-time code API. Otherwise the request will return a `401` Forbidden response.
+- `API_AUTHORIZATION`: _Нэг Удаагийн Код_ гаргаж авах backend server-т холбогдоход хэрэглэгдэх нууц үг. Энэ буруу байгаа тохиолдолд backend service ээс `401` гэсэн алдааны код буцаж ирнэ.
 
-#### New Relic configuration
+#### New Relic тохиргоо
 
-We use New Relic to monitor for server side errors and application performance in production and staging. We do not leverage New Relic client (browser side) metric reporting.
+Энэхүү прожект нь New Relic ашиглан сервэр талын алдаа болон аппын ажиллагааны талаарх мэдээллийг гаргаж авдаг байдлаар тохируулсан. (Client буюу browser талын мэдээллийг бол авдаггүй). 
 
-- `NEW_RELIC_APP_NAME`: The app name set up in New Relic.
+- `NEW_RELIC_APP_NAME`: New Relic-т бүртгэлтэй апп-н нэр..
 
-- `NEW_RELIC_LICENSE_KEY`: Credentials needed to authenticate with New Relic.
+- `NEW_RELIC_LICENSE_KEY`: New Relic-т хандахад хэрэгтэй нууц үг / лиценз.
 
-#### OTP (2-factor) configuration
+#### OTP (2-factor) тохиргоо
 
-We use Notify and django-otp to send login auth code via SMS.
+Вэв апп руу албан ёсны, эрх бүхий байгууллагын (ЭМЯ, УОК...) ажилчид имэйл, нууц үгээрээ нэвтрэн ороход OTP буюу нэг удаагийн нууц үгийг утасруу нь мэссэж илгээж болдог байхаар оруулсан байгаа. (Энэ нэг удаагийн нууц үг гэдэг нь оношилгооны сервисээс авдаг _Нэг Удаагийн Код_ оос өөр гэдгийг анхаарна уу). Энэ нь зөвхөн ваб апп руу нэвтрэхэд л хэрэг болдог, тухайн ажилчныг мөн гэдгийг бататгаж байгаа аюулгүй байдлын үүднээс авч буй арга хэмжээ юм.
 
-- `OTP_NOTIFY_ENDPOINT`: Changes the default Notify endpoint used.
+- `OTP_NOTIFY_ENDPOINT`: Мэссэж илгээх ажиллагааг хариуцаж буй сервисийн хаяг.
 
-- `OTP_NOTIFY_TEMPLATE_ID`: The is the SMS template used and created via the Notify dashboard.
+- `OTP_NOTIFY_TEMPLATE_ID`: Мэссэжний ерөнхий бүтцийг зааж өгсөн template ID. Үүнийг Notify dashboard дээр үүсгэж өгсөн байна.
 
-- `OTP_NOTIFY_API_KEY`: The API key used to call Notify
+- `OTP_NOTIFY_API_KEY`: Notify сервисийг ажиллуулахад хэрэгтэй нууц түлхүүр.
 
-- `OTP_NOTIFY_NO_DELIVERY`: Used in tests, prints the token in the console instead of calling Notify.
+- `OTP_NOTIFY_NO_DELIVERY`: Зөвхөн тестийн орчинд ашиглагдана. (Notify дуудахад жинхэнэ сервис рүү хандахын оронд console дотор мэдээллийг хэвлэж харуулна).
 
-- `OTP_NOTIFY_TOKEN_VALIDITY`: Time in seconds before the token expires
+- `OTP_NOTIFY_TOKEN_VALIDITY`: Мэссэжээр илгээсэн код нь хэдий хугацаанд хүчинтэй байхыг тохируулж өгнө. Секундээр.
 
-[Read the docs here](https://django-otp-notify.readthedocs.io/en/latest/)
+[Дэлгэрэнгүй уншихыг хүсвэл.](https://django-otp-notify.readthedocs.io/en/latest/)
 
-#### Notify configuration
+#### Notify тохиргоо
 
-We are using Notify for our OTP SMS codes through an `django-otp-` plugin, but we are also using it directly to send emails.
+Notify сервис нь OTP (one time passcode) мэссэж кодыг `dhango-otp-` гэсэн plugin аар дамжуулан явуулах  боломжтой бөгөөд мөн үүгээр имэйл явуулах боломж ч байдаг. 
 
-- `PASSWORD_RESET_EMAIL_TEMPLATE_ID_EN` and `PASSWORD_RESET_EMAIL_TEMPLATE_ID_FR` : Template IDs for the English and French versions of the password reset email
+- `PASSWORD_RESET_EMAIL_TEMPLATE_ID_EN` : Нууц үг сэргээх хүсэлтийн хариуд явуулах имэйл ийн формат. Англи хэл дээр. (Монгол хэл дээр яг үүнтэй төстэйгээр үүсгэх боломжтой)
 
-- `INVITATION_EMAIL_TEMPLATE_ID_EN` and `INVITATION_EMAIL_TEMPLATE_ID_FR` : Template IDs for the English and French versions of the user account creation email
+- `INVITATION_EMAIL_TEMPLATE_ID_EN` : Шинээр хэрэглэгч  бүртгүүлсэн тохиолдолд тухайн хэрэглэгчид очих автомат имэйлийн формат. Англи хэл дээр. Үүнийг мөн Монгол хэл дээр гаргах боломжтой.
 
-#### Contact form and Freshdesk
+#### Холбоо Барих 
 
-The contact form sends any inquiry to Freshdesk.
+Вэб аппын хэрэглэгчид холбоо вэб апп хийсэн, туслах үйлчилгээ үзүүлдэг операторуудтай холбоо барих хүсэлтэй бол асуух асуулт нь Freshdesk рүү орохоор тохируулах боломжтой.
 
-- `FRESHDESK_API_KEY`: Your user API key generated in Freshdesk.
+- `FRESHDESK_API_KEY`: FreshDesk систем-д API түвшинд хандах түлхүүр.
 
-- `FRESHDESK_API_ENDPOINT`: Your Freshdesk domain with `/api/v2/` at the end.
+- `FRESHDESK_API_ENDPOINT`: FreshDesk систем-д API түвшинд хандах `/api/v2/`-аар төгссөн хаяг.
 
-- `FRESHDESK_PRODUCT_ID`: If you use more than one product, use this variable to specify where the feedback should go to.
+- `FRESHDESK_PRODUCT_ID`: Freshdesk дотор нэгээс олон бүтээгдэхүүн бүртгүүлсэн байдаг бол яг хэрэгтэй бүтээгдэхүүнийхээ ID-г энд оруулж өгнө.
 </div>
 </details>
 
-<strong>[Example `.env` file](https://github.com/cds-snc/covid-healthcare-portal/blob/main/portal/.env.example)</strong>
+<strong>[Жишээ `.env` файл](https://github.com/cds-snc/covid-healthcare-portal/blob/main/portal/.env.example)</strong>
 
-### Running the app for the first time
+### Вэб аппыг анхныхаа удаа ажиллуулахад
 
-**Quick Start:** After activating a virtual environment, run
+**Хурдан эхлэх:** virtual environment, аа идэвхжүүлсэний дараа доорх коммандуудыг ажиллуулна:
 
 - `pipenv run css`
 - `python manage.py collectstatic --noinput -i scss`
-- the `entrypoint.sh` script to perform the database migrations
+- `entrypoint.sh` скриптийг ажиллуулж өгөгдлийн сангийн migration-г хийнэ
 
-sA server will then be started and can be accessed at `http://127.0.0.1:8000/` or `http://localhost:8000`.
+Ингэсний дараа вэб апп маань: `http://127.0.0.1:3000/` or `http://localhost:3000` гэсэн хаяг дээр ажиллаж байна..
 
-For a more thorough setup of the various environment options please follow the instructions below after having activated your virtual environment from inside the root project folder.
+Өшөө дэлгэрэнгүй, нарийн тохиргоонуудын талаар мэдээлэл авах бол дараах мэдээлэлтэй танилцана уу:
 
-Copy `./portal/.env.example` to `./portal/.env` and provide the appropriate values for your configuration.
+`./portal/.env.example` гэсэн файлыг хуулбарлан `./portal/.env` гэсэн нэртэй файл үүсгэн, доторх тохиргоонуудыг хийж өгнө.
 
 #### 1. Database migrations
 
-By default the Django will create an SQLite database, but we use Postgres in production.
-
-If a `DATABASE_URL` environment variable exists, it will set all the connection parameters at the same time.
+Ямар нэг нэмэлт тохиргоогүйгээр Django бол өөрөө SQLite өгөгдлийн сан үүсгэдэг байгаа. Гэхдээ энэхүү вэб апп нь Postgres-г хэрэглэдэг. `DATABASE_URL` гэсэн хувьсагчийн утгыг оноож өгсөн бол түүний дагуу өгөгдлийн санд холбогдох мэдээллийг аваад тохируулна гэсэн үг.
 
 ##### Postgres [URL schema](https://github.com/jacobian/dj-database-url#url-schema)
 
@@ -147,58 +145,58 @@ If a `DATABASE_URL` environment variable exists, it will set all the connection 
 | ------------------------------- | ----------------------------------------- |
 | `django.db.backends.postgresql` | `postgres://USER:PASSWORD@HOST:PORT/NAME` |
 
-To create the database schema, run `python manage.py makemigrations`.
+Өгөгдлийн сангийн scheme үүсгэхэд: `python manage.py makemigrations`.
 
-Then, create the tables by running `python manage.py migrate`.
+Table үүдээ үүсгэхдээ: `python manage.py migrate`.
 
-#### 2. Compile SCSS files to CSS
+#### 2. SCSS файлуудыг CSS болгож хөрвүүлэх
 
-You will need to generate the `profiles/static/css/styles.css` file by compiling the SCSS files. To generate the file once, run:
+SCSS файлуудыг compile хийж `profiles/static/css/styles.css` үүсгэх хэрэгтэй.. Ингэхийн тулд:
 
 ```
 pipenv run css
 ```
 
-If you are developing the app and want your styling changes applied as you make changes, you can use the `--watch` flag.
+Хөгжүүлэлтийн орчинд ажиллан, оруулсан өөрчлөлтөө шууд хардаг байхыг хүсвэл `--watch` гэсэн нэмэлт тохиргоог комманддаа дамжуулж өгөх боломжтой.
 
 ```
 pipenv run csswatch
 ```
 
-Note that watching the SCSS will require a new terminal window to run the development server. If you are using iTerm, you can open another tab with `Command + t` or a new pane with `Command + d`. Remember to activate your virtual environment in your new pane using `pipenv shell` and `pipenv install`.
+SCSS нь комманд терминалын орчинд шинэ цонх нээхийг шаарддаг. Тиймээс та жишээ нь iTerm ашиглаж байгаа тохиолдолд, шинэ цонх нэхийн оронд шинэ таб `Command + t` эсвэл `Command + d` гэж үүсгэх боломжтой. Шинэ таб үүсгэсний дараа прожектийнхоо фолдер дотор дахин `pipenv shell` болон `pipenv install` гэсэн коммандуудыг ажиллуулахаа мартав аа.
 
-#### 3. Create admin super user (optional)
+#### 3. Гар аргаар админ хэрэглэгч (super user) үүсгэх
 
-This app allows you to use the Django admininstration panel (`/admin`) to manage users.
+Вэб апп-т бүртгэлтэй байгаа хэрэглэгчдийг удирдах хэрэгцээтэй бол админ хэрэглэгч байх хэрэгтэй болно. Админы хандах эрх нь `/admin` гэсэн хаягт байна.
 
-In order to access the `/admin` route, you will need to create a super user account to access the admin.
+`/admin` гэсэн хаягаар хандахын тулд эхлээд super user аккаунт үүсгэсэн байх шаардлагатай. (Хэрвээ та `docker-compose up` ажиллуулж байгаа бол энэ аккаунт нь аль хэдийний үүссэн байна). 
 
-Run `python manage.py createsuperuser` to create a super user.
+Хэрвээ гар аргаар админ үүсгэх шаардлагатай бол дараах коммандыг ажиллуулна уу: `python manage.py createsuperuser`
 
-#### 4. Run development server
+#### 4. Хөгжүүлэлтийн орчны сервэрийг ажиллуулах
 
-Then, run `python manage.py runserver` to run the app. Go to `http://127.0.0.1:8000/` to see the login page.
+ Вэб аппыг ажиллуулахын тулд ажиллуулах комманд: `python manage.py runserver`. Дараа нь: `http://127.0.0.1:3000/` гэж browser-т хандана.
 
-### Running using Docker Compose
+### Docker Compose ашиглан вэб аппыг ажиллуулах
 
-> [Compose](https://docs.docker.com/compose/) is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration.
+> [Compose](https://docs.docker.com/compose/) нь Docker суурьтай апп уудад зориулсан, нэг комманд ажиллуулахад л бүх хэрэтэй сервисүүд тусдаа өөрийн гэсэн орчин үүсэн ажиллах боломжтой болгодог технологи юм.
 
-You can use Docker Compose to build an application container along with a Postgres database. It will map your local files into a Docker container, spin up a PostgreSQL database, and do CSS compilation and a DB migration. The app runs on port `8000`, the database at port `5432` (u: `user`, p: `password`) and will be served at `http://0.0.0.0:8000`.
+Энэ вэб аппын хувьд Docker Compose -г ашиглан Postgres өгөгдлийн сантай, вэб аппыг бүрэн ажиллуулах хялбар боломжтой. Ингэснээр таны хөгжүүлэлтийн орчинд байгаа файлуудыг Docker-н орчинд оруулан, PostgreSQL өгөгдлийн санг үүсгэж, CSS compilation хийж, өгөгдлийн сангийн migration-г хийж хэрэгцээтэй scheme болон table үүдийг үүсгэх гэсэн бүх зүйлсийг өөрөө хийчихдэг гэсэн үг. Вэб апп нь `3000` гэсэн порт дээр ажиллахаар тохируулагдсан байгаа бол өгөгдлийн сан нь `5432` гэсэн порт дээр ажиллахаар тохируулагдсан байгаа.
 
-Read the step-by-step process at [Django, Docker, and PostgreSQL Tutorial](https://learndjango.com/tutorials/django-docker-and-postgresql-tutorial).
+Өмнө нь [Django, Docker, and PostgreSQL Tutorial](https://learndjango.com/tutorials/django-docker-and-postgresql-tutorial) оролцсон апп хөгжүүлэлт хийж байгаагүй бол энэ хичээлээс харах боломжтой. 
 
 ### Run
 
-1. Spin up the app: `docker-compose up`
-2. Spin down the app: `Command + c` or `docker-compose down`
+1. Апп ажиллуулах: `docker-compose up`
+2. Аппыг унтраах: `Command + c` or `docker-compose down`
 
-### Translations
+### Орчуулга
 
-We're using the default Django translations library to add content in French and English.
+Эх хэл рүү хөрвүүлэх боломжийг Django технологийн стандард сангууд бий болгож өгч байгаа. Тэгэхээр бид үүнийг ашиглан Монгол хэл рүү хөрвүүлэх ажлыг хийхээр бэлдээд байна. (Энийг уншиж байх үед хэл нь орчуулагдсан байвал орчуулгын ажлаа хийсэн мөртлөө энэ баримтаа шинэчлээгүй байна гэсэн үг юм). 
 
-Here is a short overview of adding a translated string to the application.
+Орчуулгын ажлыг хэрхэн хийх талаар товч зааварчилгаа:
 
-Add your string to a template using the `trans` tag.
+`trans` гэсэн tag ашиглан орчуулгын текстээ templare рүү нэмж өгнө.
 
 ```
 # profiles/templates/profiles/start.html
@@ -206,163 +204,52 @@ Add your string to a template using the `trans` tag.
 <h1>{% trans "Generate code for Exposure Notification app" %}</h1>
 ```
 
-Run `python manage.py makemessages -l fr` to update the `django.po` translations file inside of `/locale`.
+Дараа нь `python manage.py makemessages -l mn` ажиллуулж `/locale` дотор байрлаж буй `django.po` гэсэн орчуулгын файлыг шинэчлэнэ.
 
 ```
-# locale/fr/LC_MESSAGES/django.po
+# locale/mn/LC_MESSAGES/django.po
 
 #: profiles/templates/profiles/start.html:7
 msgid "Generate code for Exposure Notification app"
-msgstr "Générer du code pour l'application de notification d'exposition"
+msgstr "Exposure Notification апп-д зориулсан кодыг үүсгэх"
 ```
 
-Run `python manage.py compilemessages` to compile the translations so that Django knows how to use them.
+Үүний дараа: `python manage.py compilemessages` гэж ажиллуулсанаар Django нь шинэ орчуулга орж ирсэн байна гэдгийг мэдэж аван, ашиглаж эхлэнэ гэсэн үг юм.
 
-For more complete documentation refer to the [Django Translation](https://docs.djangoproject.com/en/3.0/topics/i18n/translation/#translation) docs.
+Илүү дэлгэрэнгүй мэдээлэл:  [Django Translation](https://docs.djangoproject.com/en/3.0/topics/i18n/translation/#translation) docs.
 
-## Development workflow
+## Хөгжүүлэх Процесс
 
-### Feature development
+### Frature нэмэх / өөрчлөлт, засвар хийх
 
-Feature development on the Portal follows a [trunk-based development](https://trunkbaseddevelopment.com/) workflow. The `main` branch has the most up-to-date code and is always production-ready. When starting a new feature (or a bugfix, etc.), a new branch is created from the tip of the `main` branch. Once the work is complete, the feature is merged back into `main` via a Pull Request (PR). PRs must pass a series of [automated tests](https://github.com/cds-snc/covid-alert-portal#automated-tests) (unit tests, linting, etc), as well as a manual review by another developer. After the automated tests pass and the PR is approved, the code is merged into `main` and the feature branch is deleted. The `main` branch is protected from direct pushes or force pushes — pull requests are mandatory.
+Вэб апп-д нэмэлт feature хөгжүүлэх гэж байгаа тохиолдолд  [trunk-based development](https://trunkbaseddevelopment.com/) wпроцессыг дагана. `main` branch-д байнга хамгийн сүүлийн, production-ready код байрлана гэсэн үг. Шинээр хөгжүүлэлт хийх гэж буй тохиолдолд `main` branch аас салаалуулж, хөгжүүлэлтийн ажлаа хийгээд, code review, test давсаны дараа буцаад `main` branch рүү нийлүүлнэ. Орж ирэх PR-ууд нь [автоматжуулсан тестүүдийг](https://github.com/cds-snc/covid-alert-portal#automated-tests) (unit tests, linting, etc) давдаг байх хэхрэгтэй. 
 
-### Application versioning
+### Аппын дугаарлалт
 
-We keep the version number in a root-level [`VERSION` file](https://github.com/cds-snc/covid-alert-portal/blob/main/VERSION) and the list of changes between versions in the root [`CHANGELOG.md` file](https://github.com/cds-snc/covid-alert-portal/blob/main/CHANGELOG.md). We follow [semantic versioning conventions](https://semver.org/) and for the Changelog file we follow the format suggested by [keepachangelog.com](https://keepachangelog.com/en/1.0.0/).
+Үндсэн түвшинд аппын дугаарлалтыг [`VERSION` файл](https://github.com/cds-snc/covid-alert-portal/blob/main/VERSION)-д хадгалж явна. Орсон өөрчлөлтүүдийг [`CHANGELOG.md` файл](https://github.com/cds-snc/covid-alert-portal/blob/main/CHANGELOG.md)-д хадгалж явна. Бидний дугаарлалтыг дагах процесс нь: [semantic versioning conventions](https://semver.org/).
 
-Not all PRs will update the app version — in fact, most of them don’t. PRs with new features or bug fixes require an update to the Changelog file, under “Unreleased”. When the version is next incremented, all of the unreleased changes are included as part of the version bump. It’s okay if something doesn’t make it into the Changelog when it is merged — `CHANGELOG.md` is a file like any other and can be corrected retroactively.
+Бүх PR нь дугаарлалтыг өсгөх ёстой гэсэн үг биш. Шинэ өөрчлөлтүүд болон алдааны засварууд бол зайлшгүй Changelog файлд орсон байх  ёстой. Орохдоо "Unreleased" гэсэн хэсэг доор байрлана. Аппын дугаарлалтыг өсгөх үед энэ бүх "Unreleased" гэсэн өөрчлөлтүүдийг оруулж өгөх юм.
 
-Note that releasing a change to production **requires** incrementing the `VERSION` file. The Changelog is kept up-to-date by convention, but it is not formally required to be in sync with the version in the VERSION file.
+Production руу аппыг оруулж байгаа тохиолдолд бол дугаарлалтыг заавал өсгөх шаардлагатай гэдгийг анхаарна уу. 
 
-### Automated tests
+### Автоматжуулсан тест
 
-We are using [GitHub Actions](https://github.com/features/actions) as our CI platform: it runs our automated tests for us and automates our deployments.
+Эх үүсвэрийн прожектууд бол [GitHub Actions](https://github.com/features/actions)-г CI шийдэлдээ ашигласан байгаа. Энэ нь автоматжуулсан тестүүд болон deployment-уудыг ажуллуулах үүрэгтэй. Яг одоогийн байдлаар (2020-11-22) Монголд зориулан сайн дураараа хийж байгаа энэхүү төсөлд маань GitHub Actions ажиллаж эхлээгүй байгаа бөгөөд энэ нь хийгдэх ажлын жагсаалтуудад орсон байгаа.
 
-Our automated tests include:
+Тестүүдэд:
 
-- `pipenv run test`: Runs our suite of unit tests (on CI we run them in Python versions 3.6, 3.7, 3.8)
-- `pipenv run format --check`: uses the `black` Python formatter to ensure consistency of our code
+- `pipenv run test`: unit test-үүдийг ажиллуулна (Python - 3.6, 3.7, 3.8)
+- `pipenv run format --check`: code consistency
 - `pipenv run lint`: uses `flake8` to ensure Python style guide compliance
 - Snyk (SaaS): checks for vulnerable dependencies
 - LGTM (SaaS): checks for code smells and insecure coding practices
 - `terraform plan`: if the terraform config has been modified, `terraform plan` will return a diff of changes between the current infrastructure and the files in the PR.
 - `terraform security-scan`: will flag any unsafe configuration changes
 
-We also have an automated test for code coverage, which will fail if code coverage falls below 80%. We are using the [`coverage`](https://coverage.readthedocs.io/en/coverage-5.3/) library, as recommended by the Django docs. Configuration for `coverage` is found in [`pyproject.toml`](https://github.com/cds-snc/covid-alert-portal/blob/main/pyproject.toml).
+Code Coverage бас орсон байгаа бөгөөд 80% аас доош унасан тохиолдолд тестүүд fail хийж эхлэнэ гэсэн үг. Үүнд хэрэглэгдэж буй сан нь: [`coverage`](https://coverage.readthedocs.io/en/coverage-5.3/). `coverage`-н тохиргоо нь [`pyproject.toml`](https://github.com/cds-snc/covid-alert-portal/blob/main/pyproject.toml) файл дотор байна..
 
 - `pipenv run coverage_test`: run the unit tests to generate the report
 - `pipenv run coverage_report`: display the report
 
 ---
 
-# Portail Alerte COVID
-
-Ce dépôt met en oeuvre un portail de soins de santé qui accompagne l’[application mobile COVID Shield du gouvernement du Canada](https://github.com/cds-snc/covid-shield-mobile). Ce portail fournit des codes temporaires à utilisation unique aux professionnels de la santé authentifiés, et ces codes peuvent être transmis aux personnes ayant un diagnostic de COVID-19. Le code permet aux personnes de téléverser les ID aléatoires de l’application mobile si elles acceptent. Aucune information personnelle n’est recueillie, et aucun lien n’est établi entre les codes et les tests.
-
-Pour plus d’information sur la façon dont tout cela fonctionne, référez-vous au [raisonnement derrière COVID Shield](https://github.com/CovidShield/rationale) (en anglais).
-
-## Configuration
-
-### Activer un virtualenv
-
-Installez [`pipenv`](https://pypi.org/project/pipenv/).
-
-```sh
-# cd into project folder
-pipenv --three  # create a new virtualenv
-pipenv shell    # activate virtualenv
-pipenv install  # install dependencies
-```
-
-### Exécuter l’appli pour une première fois
-
-**Démarrage rapide:** Après avoir activé un environnement virtuel, exécutez le script `entrypoint.sh` pour effectuer les migrations de base de données, la collecte de fichiers statiques et la compilation des fichiers CSS. Une instance de l'application sera alors démarré et sera accessible à `http://127.0.0.1:8000 /` ou `http://localhost:8000`.
-
-Pour une configuration plus approfondie des différentes options d'environnement, veuillez suivre les instructions ci-dessous après avoir activé votre environnement virtuel et déplacé dans le dossier `portal` de niveau supérieur.
-
-Copiez `./portal/.env.example` vers `./portal/.env` et fournissez les valeurs adéquates pour votre configuration.
-
-#### 1. Migrations de bases de données
-
-Par défaut, Django crée une base de données SQLite, mais nous utilisons Postgres en production.
-
-Si une variable d’environnement `DATABASE_URL` existe, elle configurera tous les paramètres de connexion au même moment.
-
-##### Postgres [URL schema](https://github.com/jacobian/dj-database-url#url-schema)
-
-| Django Backend                  | DATABASE_URL                              |
-| ------------------------------- | ----------------------------------------- |
-| `django.db.backends.postgresql` | `postgres://USER:PASSWORD@HOST:PORT/NAME` |
-
-Pour créer le schéma de base de données, exécutez `python manage.py makemigrations`
-
-Ensuite, créez les tableaux en exécutant `python manage.py migrate`
-
-#### 2. Compilation des fichiers SCSS en CSS
-
-Vous devrez générer le fichier `profiles/static/css/styles.css` en compilant les fichiers SCSS. Pour générer le fichier une seule fois, exécutez :
-
-```
-python manage.py sass profiles/static/scss/ profiles/static/css/
-```
-
-Si vous développez l’application et que vous voulez voir vos changements de styles être appliqués au fur et à mesure que vous les faites, vous pouvez utiliser le flag `--watch`.
-
-```
-python manage.py sass profiles/static/scss/ profiles/static/css/ --watch
-```
-
-Remarquez que surveiller ainsi le SCSS nécessitera d’avoir une nouvelle fenêtre du terminal pour exécuter le serveur de développement. Si vous utilisez iTerm, vous pouvez ouvrir un nouvel onglet avec `Command + t` ou ajouter une subdivision avec `Command + d`. N’oubliez pas d’activer votre environnement virtuel dans votre nouvelle subdivision à l’aide de `pipenv shell` et `pipenv install`.
-
-#### 3. Création d’un super utilisateur admin (facultatif)
-
-Cette application vous permet d’utiliser l’admin (`/admin`) pour gérer les utilisateurs, même si les utilisateurs peuvent s’inscrire eux-mêmes.
-
-Pour accéder au chemin `/admin` vous devrez créer un compte de super utilisateur.
-
-Exécutez `python manage.py createsuperuser` pour créer un super utilisateur.
-
-#### 4. Exécution du serveur de développement
-
-Exécutez ensuite `python manage.py runserver` pour faire fonctionner l’application. Rendez-vous à `http://127.0.0.1:8000/` pour voir la page d’accueil.
-
-### Exécuter avec Docker Compose
-
-> [Compose](https://docs.docker.com/compose/) est un outil pour définir et exécuter des applications Docker multiconteneurs. Avec Compose, vous utilisez un fichier YAML pour configurer les services de votre application. Puis, avec une seule commande, vous créez et lancez tous les services à partir de votre configuration.
-
-Vous pouvez utiliser Docker Compose pour construire un conteneur d’application parallèlement à une base de données Postgres. Il va mapper vos fichiers locaux dans un conteneur Docker, créer une base de données PostgreSQL et faire une compilation CSS et une migration de base de données. L’application s’exécute sur le port `8000`, la base de donnée sur le port `5432` (u: `user`, p: `password`) et sera desservie à l’adresse `http://0.0.0.0:8000`.
-
-Vous pouvez les le processus étape par étape sur [Django, Docker, et PostgreSQL Tutorial](https://learndjango.com/tutorials/django-docker-and-postgresql-tutorial) (en anglais).
-
-### Exécuter
-
-1. Créez l’application : `docker-compose up`
-2. Arrêter l’exécution de l’application : `Command + c` ou `docker-compose down`
-
-### Traductions
-
-Nous utilisons la bibliothèque Django par défaut pour ajouter de contenu en anglais et en français.
-
-Voici un survol rapide de la façon d’ajouter des chaînes de caractères traduites dans l’application.
-
-Ajoutez votre chaîne de caractères à un modèle en utilisant le tag `trans`.
-
-```
-# profiles/templates/profiles/start.html
-
-<h1>{% trans "Generate code for Exposure Notification app" %}</h1>
-```
-
-Exécutez `python manage.py makemessages -l fr` pour mettre à jour le fichier de traductions `django.po` à l’intérieur de `/locale`.
-
-```
-# locale/fr/LC_MESSAGES/django.po
-
-#: profiles/templates/profiles/start.html:7
-msgid "Generate code for Exposure Notification app"
-msgstr "Générer du code pour l'application de notification d'exposition"
-```
-
-Exécutez `python manage.py compilemessages` pour compiler les traductions afin que Django sache comment les utiliser.
-
-Pour obtenir de la documentation plus exhaustive, veuillez vous référer à celle des [traductions Django](https://docs.djangoproject.com/en/3.0/topics/i18n/translation/#translation) (en anglais).

@@ -23,9 +23,9 @@ class Command(BaseCommand):
         # https://docs.djangoproject.com/en/3.0/topics/auth/passwords/#django.contrib.auth.password_validation.validate_password
         if validate_password(SU_DEFAULT_PASSWORD) is None:
             HealthcareUser.objects.create_superuser(
-                "admin@cds-snc.ca",
+                "uok_admin",
                 "hcw_portal_admin",
                 SU_DEFAULT_PASSWORD,
-                phone_number="+16476675327",
+                phone_number="+97699999999",
             )
             self.stdout.write(self.style.SUCCESS("Successfully created new super user"))
