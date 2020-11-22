@@ -138,7 +138,7 @@ class SignUpView(FormView):
     template_name = "profiles/signup.html"
 
     def get_success_url(self):
-        return reverse_lazy("signup_2fa")
+        return reverse_lazy("start")
 
     def get(self, request, *args, **kwargs):
         invited_email = self.request.session.get("account_verified_email", None)
@@ -235,7 +235,7 @@ class Login2FAView(LoginRequiredMixin, FormView):
             return redirect(reverse_lazy("yubikey_verify"))
 
         if not self.has_mobile and not self.has_static_code:
-            return redirect(reverse_lazy("signup_2fa"))
+            return redirect(reverse_lazy("start"))
 
         return super().get(request, *args, **kwargs)
 
