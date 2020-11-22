@@ -123,10 +123,10 @@ class YubikeyDeleteView(Is2FAMixin, DeleteView):
         response = super().delete(request, *args, **kwargs)
         # If the user logged in with his yubikey in this session, he wont be verified anymore
         # So we need to send him a new SMS
-        if request.user.is_verified() is False or isinstance(
+        """ if request.user.is_verified() is False or isinstance(
             request.user.otp_device, RemoteYubikeyDevice
         ):
-            generate_2fa_code(self.request.user)
+            generate_2fa_code(self.request.user) """
         return response
 
     def get_success_url(self):
@@ -196,7 +196,7 @@ class SignUp2FAView(LoginRequiredMixin, FormView):
         existing_user.phone_number = form.instance.phone_number
         existing_user.save()
 
-        generate_2fa_code(self.request.user)
+        """ generate_2fa_code(self.request.user) """
 
         return super(SignUp2FAView, self).form_valid(form)
 
@@ -453,7 +453,7 @@ def password_reset_complete(request):
     if request.user.remoteyubikeydevice_set.first() is not None:
         return redirect(reverse_lazy("yubikey_verify"))
     else:
-        generate_2fa_code(request.user)
+        """ generate_2fa_code(request.user) """
         return redirect(reverse_lazy("login_2fa"))
 
 
