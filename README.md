@@ -6,6 +6,10 @@ COVID Tracing Mongolia нь [CovidShield]((https://www.covidshield.app/)) гэс
 
 Холбоо барих хүсэлтэй бол: amarbayar.amarsanaa@gmail.com гэсэн хаягаар холбогдоорой.
 
+## Жишээ
+
+<img src="/images/1.png" width="240"><img src="/images/2.png" width="240"><img src="/images/3.png" width="240"><img src="/images/4.png" width="240">
+
 ## Техникийн Үндэс
 
 Энэхүү портал вэб апп нь `docker-compose up` аар эсвэл өөрөө бие даасан python процесс болон ажиллах боломжтой.
