@@ -50,7 +50,7 @@ class HealthcareUserManager(BaseUserManager):
         """
         Creates and saves a superuser with the given email, name and password.
         """
-        cds = HealthcareProvince.objects.get(abbr="CDS")
+        cds = HealthcareProvince.objects.get(abbr="CTM")
         user = self.create_user(
             email,
             name=name,

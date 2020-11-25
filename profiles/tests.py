@@ -494,7 +494,7 @@ class SignupView(AdminUserTestCase):
         password = uuid4()
         self.new_user_data = {
             "email": self.invited_email,
-            "province": "CDS",
+            "province": "CTM",
             "name": "Chuck Norris",
             "phone_number": "+12125552368",
             "phone_number_confirmation": "+12125552368",
